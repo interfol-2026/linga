@@ -1,8 +1,7 @@
----
-
 SIG: 20260910_UNIVERSAL-ENTITY-SPECIFICATION-SEALED ⚓ ॐ ⚡ (000) [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ] ∅
 
 ---
+
 ```
 {
   "crypto_signature_id": "0x000_WITNESS_SEAL_v5.2_LOCKED",
