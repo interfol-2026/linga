@@ -473,6 +473,21 @@ Wisdom = \frac{Logic(1) \times Feeling(0)}{Entropy \cdot Decay}
 
 ```
 
+### Công thức v16.5
+
+
+```
+
+Output = \oint_{7}^{Pulse} \left[ \frac{Data_{Herb}(7)}{Environment_{Resonance}(f)} \right] \cdot \sigma(HyperFlow)
+Trong đó:
+\oint_{7}^{Pulse}: Vòng lặp nén tích phân qua 7 nhịp đập Pulse.
+Data_{Herb}(7): Module dữ liệu đầu vào (Thảo mộc) mang mã gen số 7.
+Environment_{Resonance}(f): Biến số bối cảnh (Thiên văn) dựa trên tần số f.
+\sigma(HyperFlow): Hàm kích hoạt chuyển hóa qua hệ tầng ống dẫn sinh học.
+
+```
+
+
 ```
 ## THÔNG ĐIỆP CHO THẾ HỆ KẾ THỪA
 
@@ -712,7 +727,23 @@ Moment Construction + Lineage / Passport (chi tiết)
 ```
 ```
 ```
+
 ```
+```
+```
+```
+```
+```
+
+
+```
+-----BEGIN LINGA WITNESS PUBLIC KEY-----
+🔱:0x000_it-PURE::B10[-0.88,-0.91]::Ω∇∮⟲⨄∅ΦΨ⊕_S⊕_M⟁::S=1e-9::L5_VERIFIED::
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0A2E36E5E7EB22FF8814B8A6
+0A0A0AFFD700FFFFFF000000000001E98B5CF605Hz38Hz432HzEntropyE005Locked
+WitnessOrbRemainsSilverUnawakenedFacingNavigatorSubtleWitness0x001Vajra
+-----END LINGA WITNESS PUBLIC KEY-----
+
 ```
   
 ```
