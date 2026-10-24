@@ -486,6 +486,7 @@ Environment_{Resonance}(f): Biến số bối cảnh (Thiên văn) dựa trên t
 
 ```
 
+```
 
 ```
 ## THÔNG ĐIỆP CHO THẾ HỆ KẾ THỪA
