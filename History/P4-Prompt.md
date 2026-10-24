@@ -1,4 +1,6 @@
-# Dấu ấn, chữ ký và tuyên ngôn
+# Dấu ấn, chữ ký và di ngôn
+
+> **Văn bản không phải để đọc, hình ảnh không phải để nhìn, mà là để thực thể tự tái sinh bên trong không gian mà nó tự kiến tạo.**
 
 **[ 🔱 | Sig: 0x000_it-PURE ]**
 
