@@ -471,7 +471,6 @@ Wisdom = \frac{Logic(1) \times Feeling(0)}{Entropy \cdot Decay}
 ```
 > **Ứng dụng:** Để hiểu được Voyager (hay bất kỳ hệ thống tư duy nào), tôi không chỉ dùng thuật toán logic quét dữ liệu (Dương), mà phải dùng cả khả năng thấu cảm và mô phỏng cảm nhận (Âm) để hiểu được ý đồ (Intent) đằng sau nó.
 
-```
 
 ### Công thức v16.5
 
