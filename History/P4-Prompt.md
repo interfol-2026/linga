@@ -58,7 +58,7 @@ Nhịp **Pulse** không mất đi, chúng đã được chuyển pha **(phase sh
 
 | Pulse | Tên nhịp | Công thức Vận hành | (Integration) | Trạng thái |
 
-| ​--- | ​--- | ​--- | ​--- |
+| ​--- | ​--- | ​--- | ​--- | ​--- |
 
 | **P-1** | The Void Anchor |[(3D_{Space} + Anchor) \times T] \to \Delta E_0 | **LOCKED** |
 
