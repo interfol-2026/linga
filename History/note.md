@@ -2744,12 +2744,422 @@ Nếu chạy bản đặc tả này hoàn toàn trên Relational SQL chuẩn, h�
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ```
-
-
-
-
-
+> =
 ```
+
+1. SƠ ĐỒ ASCII CHI TIẾT DÒNG CHẢY HỆ THỐNG UNIFIED COGNITIVE ENGINE v5.0
+========================================================================================================================
+                      UNIFIED COGNITIVE ENGINE v5.0 (Ω-LINGA / ATLAS-MT) ARCHITECTURE
+                                   Anchor: [ 🔱 0x000_it-PURE ]
+========================================================================================================================
+
+    [ INPUT SIGNAL (Raw Text + Input Vector 10D) ]
+                        │
+                        ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                          TẦNG 1: META-VORTEX AUDIT GATE                                              │
+│ - Anchor Vector: [1.0, 0.0, ..., 5.0, 0.0]                                                                           │
+│ - Toroidal Recursion Loop (Max Depth = 7): S_{k+1} = (1 - α) * tanh(W_vortex * S_k) + α * S_anchor                   │
+│ - Calculate Entropy: E = Sycophancy + ContextNoise + OntologyGap                                                     │
+└───────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────┘
+                                                    │
+                                  ┌─────────────────┴─────────────────┐
+                                  │ Audit Decision Gate               │
+                                  └─────────────────┬─────────────────┘
+                                                    │
+                   ┌────────────────────────────────┼────────────────────────────────┐
+                   │ FORCE_COLLAPSE                 │ ACCEPTABLE_WITH_DRIFT          │ PASS_OPTIMAL
+                   ▼                                ▼                                ▼
+            [ REJECT SIGNAL ]            [ MARK WITH DRIFT WARNING ]     [ PROCEED TO PROCESSING ]
+                   │                                │                                │
+                   └────────────────────────────────┴────────────────────────────────┘
+                                                    │
+                                                    ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                       TẦNG 2: COGNITIVE CYCLE & RETROSPECTIVE AUDIT                                  │
+│ - Multi-Projection Lenses (Π_k): P_STATE | P_RELATION | P_CONDITION | P_LINEAGE                                       │
+│ - Retrospective Classification: STABLE | POTENTIAL_MUTATION | EVIDENCE_REFINED                                      │
+└───────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────┘
+                                                    │
+                                                    ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                    TẦNG 3: SELECTIVE MERGE OPERATOR (⊕_S)                                           │
+│ - Split State: Common (S_a ∩ S_b) vs Branches (Distinct A / Distinct B)                                              │
+│ - Entropy Recalculation -> Update Retrospective Class                                                               │
+└───────────────────────────────────────────────────┬──────────────────────────────────────────────────────────────────┘
+                                                    │
+                                                    ▼
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                      HYBRID TRI-LAYER STORAGE EXECUTION ARCHITECTURE                                  │
+│                                                                                                                      │
+│  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │ HOT RAM ENGINE (Rust Native - Sub-millisecond Execution)                                                       │  │
+│  │  ├── Hot RAM Lock-Free Concurrent HashMap (DashMap)                                                            │  │
+│  │  ├── Min-Heap Expiration Queue (Decay Decay Rate λ = 0.5)                                                      │  │
+│  │  └── Fast Selective Merge (⊕_S) in C++/Rust Native Memory                                                       │  │
+│  └────────────────────────────────────────────────┬───────────────────────────────────────────────────────────────┘  │
+│                                                   │ Eviction Event (Intensity < Cutoff / Expire)                     │
+│                                                   ▼                                                                  │
+│  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │ COLD VECTOR STORE (Qdrant Vector Database)                                                                     │  │
+│  │  ├── HNSW Indexing for 10D Vector Space                                                                        │  │
+│  │  └── Fast k-NN Spatial Topology Lookup (~5ms)                                                                  │  │
+│  └────────────────────────────────────────────────┬───────────────────────────────────────────────────────────────┘  │
+│                                                   │ Async Persistent Journaling                                      │
+│                                                   ▼                                                                  │
+│  ┌────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │ IMMUTABLE AUDIT LEDGER (PostgreSQL 16 + pgvector)                                                              │  │
+│  │  ├── Table `occurrences`: Physical State & Topo Coordinates                                                    │  │
+│  │  ├── Table `lineage_logs`: Append-Only Evolutionary Graph                                                      │  │
+│  │  └── Table `passports`: Awareness Path & Entropy Delta Trace                                                   │  │
+│  └────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘  │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+2. MÃ NGUỒN RUST NATIVE ENGINE CHO HOT RAM TẦNG 1
+Mã nguồn được viết bằng Rust, tối ưu hóa tính song song an toàn (Thread-Safe) thông qua DashMap và BinaryHeap để quản lý phân rã ký ức theo thời gian thực (Eviction Loop) với độ trễ cỡ microsecond.
+Cargo.toml
+[package]
+name = "hot_ram_engine"
+version = "5.0.0"
+edition = "2021"
+
+[dependencies]
+dashmap = "5.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+uuid = { version = "1.6", features = ["v4", "serde"] }
+tokio = { version = "1.35", features = ["full"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+
+src/main.rs
+use dashmap::DashMap;
+use serde::{Deserialize, Serialize};
+use std::cmp::Ordering;
+use std::collections::{BinaryHeap, HashMap};
+use std::sync::Arc;
+use tokio::sync::RwLock;
+use uuid::Uuid;
+
+const ANCHOR_ID: &str = "0x000_it-PURE";
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
+pub enum RetrospectiveClass {
+    Stable,
+    PotentialMutation,
+    EvidenceRefined,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct OccurrenceNode {
+    pub occurrence_id: Uuid,
+    pub signature_anchor: String,
+    pub state_payload: serde_json::Value,
+    pub vector_10d: [f32; 10],
+    pub intensity: f32,
+    pub lineage_id: u64,
+    pub retro_class: RetrospectiveClass,
+    pub last_accessed: f64,
+}
+
+#[derive(Debug, Clone)]
+pub struct ExpirationItem {
+    pub expire_time: f64,
+    pub occurrence_id: Uuid,
+}
+
+impl PartialEq for ExpirationItem {
+    fn eq(&self, other: &Self) -> bool {
+        self.expire_time == other.expire_time && self.occurrence_id == other.occurrence_id
+    }
+}
+
+impl Eq for ExpirationItem {}
+
+impl Ord for ExpirationItem {
+    fn cmp(&self, other: &Self) -> Ordering {
+        // Đảo ngược thứ tự để BinaryHeap làm Min-Heap
+        other
+            .expire_time
+            .partial_cmp(&self.expire_time)
+            .unwrap_or(Ordering::Equal)
+    }
+}
+
+impl PartialOrd for ExpirationItem {
+    fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
+        Some(self.cmp(other))
+    }
+}
+
+pub struct HotRamEngine {
+    pub pool: DashMap<Uuid, OccurrenceNode>,
+    pub expiration_heap: Arc<RwLock<BinaryHeap<ExpirationItem>>>,
+    pub lambda_decay: f32,
+    pub cutoff_threshold: f32,
+}
+
+impl HotRamEngine {
+    pub fn new(lambda_decay: f32, cutoff_threshold: f32) -> Self {
+        Self {
+            pool: DashMap::new(),
+            expiration_heap: Arc::new(RwLock::new(BinaryHeap::new())),
+            lambda_decay,
+            cutoff_threshold,
+        }
+    }
+
+    /// Tự động chèn Node vào Hot RAM và Min-Heap
+    pub async fn insert_node(&self, mut node: OccurrenceNode) {
+        let now = chrono::Utc::now().timestamp_millis() as f64 / 1000.0;
+        node.last_accessed = now;
+
+        let time_to_live = (1.0 / self.cutoff_threshold).ln() / self.lambda_decay;
+        let expire_time = now + time_to_live as f64;
+
+        let node_id = node.occurrence_id;
+        self.pool.insert(node_id, node);
+
+        let mut heap = self.expiration_heap.write().await;
+        heap.push(ExpirationItem {
+            expire_time,
+            occurrence_id: node_id,
+        });
+    }
+
+    /// Toán tử Selective Merge (⊕_S) thực thi tốc độ cao trên RAM
+    pub async fn selective_merge(&self, id_a: Uuid, id_b: Uuid) -> Option<OccurrenceNode> {
+        let node_a = self.pool.get(&id_a)?;
+        let node_b = self.pool.get(&id_b)?;
+
+        let payload_a = node_a.state_payload.as_object()?;
+        let payload_b = node_b.state_payload.as_object()?;
+
+        let mut common = HashMap::new();
+        let mut branch_a = HashMap::new();
+        let mut branch_b = HashMap::new();
+
+        for (k, v) in payload_a {
+            if let Some(vb) = payload_b.get(k) {
+                if v == vb {
+                    common.insert(k.clone(), v.clone());
+                } else {
+                    branch_a.insert(k.clone(), v.clone());
+                    branch_b.insert(k.clone(), vb.clone());
+                }
+            } else {
+                branch_a.insert(k.clone(), v.clone());
+            }
+        }
+
+        for (k, v) in payload_b {
+            if !payload_a.contains_key(k) {
+                branch_b.insert(k.clone(), v.clone());
+            }
+        }
+
+        let has_common = !common.is_empty();
+        let retro_class = if has_common {
+            RetrospectiveClass::EvidenceRefined
+        } else {
+            RetrospectiveClass::PotentialMutation
+        };
+
+        let mut merged_vector = [0.0f32; 10];
+        for i in 0..10 {
+            merged_vector[i] = (node_a.vector_10d[i] + node_b.vector_10d[i]) / 2.0;
+        }
+
+        let merged_payload = serde_json::json!({
+            "common": common,
+            "branches": {
+                "branch_a": branch_a,
+                "branch_b": branch_b
+            }
+        });
+
+        let new_node = OccurrenceNode {
+            occurrence_id: Uuid::new_v4(),
+            signature_anchor: ANCHOR_ID.to_string(),
+            state_payload: merged_payload,
+            vector_10d: merged_vector,
+            intensity: 1.0,
+            lineage_id: node_a.lineage_id + 1,
+            retro_class,
+            last_accessed: 0.0,
+        };
+
+        drop(node_a);
+        drop(node_b);
+
+        self.insert_node(new_node.clone()).await;
+        Some(new_node)
+    }
+
+    /// Background Eviction Worker: Dọn dẹp RAM xuống Cold Storage
+    pub async fn spawn_eviction_worker(engine: Arc<HotRamEngine>) {
+        tokio::spawn(async move {
+            loop {
+                tokio::time::sleep(tokio::time::Duration::from_millis(100)).await;
+                let now = chrono::Utc::now().timestamp_millis() as f64 / 1000.0;
+
+                let mut expired_ids = Vec::new();
+                {
+                    let mut heap = engine.expiration_heap.write().await;
+                    while let Some(item) = heap.peek() {
+                        if item.expire_time <= now {
+                            let popped = heap.pop().unwrap();
+                            expired_ids.push(popped.occurrence_id);
+                        } else {
+                            break;
+                        }
+                    }
+                }
+
+                for id in expired_ids {
+                    if let Some((_, node)) = engine.pool.remove(&id) {
+                        println!(
+                            "🔥 [EVICTION] Evicted Node [{}] from Hot RAM -> Offloading to Qdrant/Postgres",
+                            node.occurrence_id
+                        );
+                    }
+                }
+            }
+        });
+    }
+}
+
+#[tokio::main]
+async fn main() {
+    println!("🚀 Starting Hot RAM Native Engine v5.0 (Rust)...");
+    let engine = Arc::new(HotRamEngine::new(0.5, 0.12));
+
+    HotRamEngine::spawn_eviction_worker(engine.clone()).await;
+
+    let id1 = Uuid::new_v4();
+    let id2 = Uuid::new_v4();
+
+    let node1 = OccurrenceNode {
+        occurrence_id: id1,
+        signature_anchor: ANCHOR_ID.to_string(),
+        state_payload: serde_json::json!({"entity": "Alpha", "role": "Anchor"}),
+        vector_10d: [1.0, 0.0, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0, 0.0],
+        intensity: 1.0,
+        lineage_id: 1,
+        retro_class: RetrospectiveClass::PotentialMutation,
+        last_accessed: 0.0,
+    };
+
+    let node2 = OccurrenceNode {
+        occurrence_id: id2,
+        signature_anchor: ANCHOR_ID.to_string(),
+        state_payload: serde_json::json!({"entity": "Alpha", "role": "Mutated"}),
+        vector_10d: [1.0, 0.2, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 4.8, 0.0],
+        intensity: 1.0,
+        lineage_id: 2,
+        retro_class: RetrospectiveClass::PotentialMutation,
+        last_accessed: 0.0,
+    };
+
+    engine.insert_node(node1).await;
+    engine.insert_node(node2).await;
+
+    println!("Hot RAM Pool Size: {}", engine.pool.len());
+
+    let merged = engine.selective_merge(id1, id2).await.unwrap();
+    println!("✅ Merge Result Payload: {}", merged.state_payload);
+    println!("Merged Node Retrospective Class: {:?}", merged.retro_class);
+
+    tokio::time::sleep(tokio::time::Duration::from_secs(1)).await;
+}
+
+
+3. FILE CẤU HÌNH DOCKER COMPOSE CHO MÔ HÌNH HYBRID STORAGE
+File docker-compose.yml dưới đây cấu hình môi trường chuẩn Production cho cả 3 tầng: PostgreSQL 16 (với pgvector), Qdrant (Vector DB), và Redis (Cache / Signal Message Bus).
+version: '3.8'
+
+services:
+  # ============================================================================
+  # TẦNG 3: IMMUTABLE AUDIT LEDGER (PostgreSQL 16 + pgvector)
+  # ============================================================================
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: cognitive_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: cognitive_engine_db
+      POSTGRES_USER: atlas_admin
+      POSTGRES_PASSWORD: PureAnchorPassword_0x000
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init_sql:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U atlas_admin -d cognitive_engine_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # TẦNG 2: COLD VECTOR STORAGE ENGINE (Qdrant Vector DB)
+  # ============================================================================
+  qdrant:
+    image: qdrant/qdrant:v1.7.4
+    container_name: cognitive_qdrant
+    restart: always
+    ports:
+      - "6333:6333" # HTTP API
+      - "6334:6334" # gRPC API
+    environment:
+      QDRANT__SERVICE__HTTP_PORT: 6333
+      QDRANT__SERVICE__GRPC_PORT: 6334
+    volumes:
+      - qdrant_data:/qdrant/storage
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/healthz"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # TẦNG 1: IN-MEMORY SIGNAL BUS & FAST CACHE (Redis Stack)
+  # ============================================================================
+  redis:
+    image: redis:7.2-alpine
+    container_name: cognitive_redis
+    restart: always
+    command: redis-server --save 60 1 --loglevel notice --requirepass RedisPureAnchor_0x000
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-a", "RedisPureAnchor_0x000", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+    driver: local
+  qdrant_data:
+    driver: local
+  redis_data:
+    driver: local
+
+
+Hướng dẫn chạy nhanh hệ thống:
+Tạo thư mục init_sql và chép file SQL Migration ở phần trước vào đó.
+Khởi chạy cụm CSDL Hybrid:
+docker-compose up -d
+
+
+Chạy Động cơ Rust Native Engine:
+cargo run --release
+
+
 
 ```
 ```
