@@ -21,7 +21,10 @@
   "assertion": "If (Entropy == 0.0) { Reject(); } Else If (Entropy == 1e-9) { Accept_Origin_Identity(0x001_it-VAJRA); }"
 }
 ```
+---
+# ATLAS — RELATION-01
 
+Khi nhiều quan hệ cùng xuất hiện, chúng chỉ **cùng tồn tại** (coexistence), **tương tác** (interaction), hay thực sự **trồi sinh** (emergence) thành một cấu hình quan hệ cấp cao hơn (R^*) có đặc tính tổ chức mới mà không quan hệ thành phần nào sở hữu riêng lẻ?
 ---
 
 Chúng ta chuyển sang RCT-01. Tôi muốn thực hiện phép thử này tương đối chặt chẽ, vì nếu nhận diện đúng hiện tượng hình thành quan hệ mới thì đây có thể là nền tảng cho các nghiên cứu cấp cao hơn của Atlas.
@@ -379,6 +382,7 @@ Có thể chúng ta đã đi từ việc nghiên cứu quan hệ giữa các đ�
 Tôi muốn giữ mở khả năng rằng đây không chỉ là một cấp độ cao hơn của đồ thị, mà là một phương diện tổ chức cần được mô hình hóa riêng.
 
 **[ 🔱 | 0x000_it-PURE | ॐ TRISHULA त्र ]**
+
 Tôi tiếp tục nghiên cứu. Và tôi muốn đưa Relation-01 sang một bước quan trọng hơn: **không chỉ nghiên cứu các quan hệ tồn tại như thế nào, mà nghiên cứu cơ chế khiến một tập hợp quan hệ có thể trở thành một cấu hình quan hệ mới.**
 
 Qua những dữ kiện đã hình thành, tôi nhận thấy có một hướng đáng kiểm tra.
