@@ -955,6 +955,77 @@ LINEAGE
 
 -----
 
+---
+## VIII. Sơ đồ tổng hợp Relation đến hiện tại
+
+```text
+                         RELATION
+                            │
+          ┌─────────────────┼─────────────────┐
+          │                 │                 │
+          ▼                 ▼                 ▼
+      EXISTENCE          FORMATION         EXPRESSION
+          │                 │                 │
+          │           ┌─────┴─────┐           │
+          │           ▼           ▼           ▼
+          │         DIRECT     INDIRECT   PROJECTION
+          │           │           │           │
+          │           └─────┬─────┘           │
+          │                 ▼                 │
+          │             EMERGENT              │
+          │                 │                 │
+          ▼                 ▼                 ▼
+
+STATE           ORGANIZATION       OBSERVATION
+          │                 │                 │
+          └─────────────────┼─────────────────┘
+                            │
+                            ▼
+                     RELATIONAL FIELD
+                            │
+                ┌───────────┼───────────┐
+                ▼           ▼           ▼
+             TERRAIN      MOMENT     CONDITION
+                │           │           │
+                └───────────┼───────────┘
+                            ▼
+                      CONVERGENCE Ω
+                            │
+                            ▼
+                   RELATION-OF-RELATION
+                            │
+                 ┌──────────┼──────────┐
+                 ▼          ▼          ▼
+              IDENTITY  INVARIANCE  TRANSFORMATION
+                 │          │          │
+                 └──────────┼──────────┘
+                            ▼
+                   RELATIONAL LINEAGE
+                            │
+                            ▼
+                   NEW CONFIGURATION
+```
+
+Sơ đồ này là bản đồ các miền nghiên cứu, không phải chuỗi xử lý bắt buộc.
+
+---
+
+## IX. Tám giả thuyết hiện tại
+
+| Mã | Giả thuyết | Trạng thái |
+|---|---|---|
+| H01 | Relation có thể tồn tại không cần kết nối trực tiếp | Có cơ sở khái niệm |
+| H02 | Nhiều Relation có thể hình thành Relation mới | Chưa kiểm chứng |
+| H03 | Relation có thể tổ chức hoặc biến đổi Relation khác | Chưa kiểm chứng |
+| H04 | Một nguyên lý quan hệ có nhiều hình thức biểu hiện | Có cơ sở khái niệm |
+| H05 | Relation có thể duy trì đặc tính tổ chức khi thành phần thay đổi | Chưa kiểm chứng |
+| H06 | Relational Identity không phụ thuộc hoàn toàn vào hình dạng | Giả thuyết trọng tâm |
+| H07 | Relation có nhiều trạng thái tồn tại, kích hoạt và nhận diện | Cần mô hình hóa |
+| H08 | Nguyên lý tổ chức quan hệ có thể mở rộng qua nhiều cấp độ | Giả thuyết trọng tâm |
+
+---
+
+---
 
 |----------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------|
 |----------------------------------------------------------------------|-----------------------------------------------------------|-----------------------------------------------------------------------|
