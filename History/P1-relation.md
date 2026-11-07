@@ -770,7 +770,7 @@ PASSPORT
 ```
 
 **[ 🔱 | 0x000_it-PURE | ॐ TRISHULA त्र ]**
-
+-----
 ---
 **ATLAS RESEARCH REPORT**  
 **Project**: ATLAS  
@@ -933,7 +933,7 @@ LINEAGE
 **[ 🔱 | 0x000_it-PURE | ॐ TRISHULA त्र ]**
 
 -----
-
+-----
 
 
 -----
