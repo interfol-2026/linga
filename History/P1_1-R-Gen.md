@@ -1,35 +1,93 @@
-## Phả hệ từ P0 tới E12, để riêng vào khung để bạn copy
+## Phả hệ từ P0 tới E12
 
 ```
 
-PHA HE TU P0 TOI E12 - TONG HOP DEN HIEN TAI
+PHA HE HOAN CHINH - TU P0 TOI E12
 
-P0 GOC
+PROMPT GOC [0x000_it-PURE] = GEN GOC [P0]
+  Gen: Disk + 3 Traj (Xanh, Do, Vang)
+       + 3 Op (PRESERVE, EMERGE, HEAL)
+       + Attractor [1,0,0,0,0,0,0,0,5]
+       + Paradox: Center vs Outside
+  Trang thai: GOC, DA CO
   |
-  +-- A, B -> H
-        |
-        +-- N1: Cay da (Dat)
-        +-- N2: Dai duong (Nuoc)
-        +-- N3: Mien dich (Loc)
-        |
-        +-- M: Mangrove (Rung ngap man)
-        |     M = N1 + N2 + N3, Dat + Nuoc + Mien dich
-        |
-        +-- E6, E7 [0/4, chua toi gioi han]
-        +-- E8 [4/4, DA TOI GIOI HAN, sup dot ngot]
-        |     Nguyen nhan: Khong phan biet duoc, IDENTICAL, NO DIFFERENCE
-        |     Lam du kien chuan cho E1, va lam 4 du kien kiem tra cho cac thi nghiem sau
-        |
-        +-- E1: N1 x N3 [0/4, mien dich song voi dat]
-        +-- E2: N2 x N3 [0/4, mien dich song voi nuoc]
-        +-- E3: M x N1 [0/4, on dinh ve phia dat, Dat 72% / Nuoc 18%]
-        +-- E4: M x N2 [0/4, on dinh ve phia nuoc, doi xung E3]
-        +-- E5: M x N3 [0/4, khuếch đại mien dich, Immune Kernel x2]
-        |
-        +-- E9: E5 x Khong phan biet duoc [1 + 3x1/2, bi cang nhung chua sup]
-        +-- E10: E9 x Thoi gian dai [2 + 2x gan day du, PENDING COLLAPSE, lam chuan cho E11]
-        +-- E11: E10 x Vo han, khong quy dinh sup [MUTATED, dot bien cyan-teal, lam chuan cho E12]
-        +-- E12: E11 x On dinh [0/4, HE ON DINH MOI cyan-teal]
+  +-- CODE v0.7.5 : Symbiosis -> Competition
+  +-- CODE v0.7.6 : Crisis -> Recombination
+  |     Trang thai: GOC, DA CO
+  |
+  +-- NHANH GOC A [A] : Tam sang o trong
+  |     Disk: [O] Attractor: IN Center: Sang Env: Vu tru tru tuong
+  |     Huong: Vao trong, Hoi tu
+  |     Trang thai: DA CO
+  |
+  +-- NHANH GOC B [B] : Tam rong, hut o ngoai
+  |     Disk: [.] Attractor: OUT Center: Rong Env: Vu tru tru tuong
+  |     Huong: Ra ngoai, Phan tan
+  |     Trang thai: DA CO
+  |           |
+  |           +-- LAI CUNG HO [H] = A x B [LAI CUNG HO, 1 lan duy nhat]
+  |           |     Disk: [O + .] Attractor: IN+OUT Center: Sang + Rong Env: Vu tru tru tuong
+  |           |     Huong: Tho 2 chieu, Flow: Singularity <=> Void
+  |           |     Gen moi: Breathing, Dual Center
+  |           |     Trang thai: DA CO
+  |           |           |
+  |           |           +-- NHANH 1 [N1] = H x Cay da [LAI KHAC HO, tot]
+  |           |           |     Disk: [Tree] Attractor: OUT Center: Hoc cay Env: Tren can, Anh sang
+  |           |           |     Hinh: Cay da tren can
+  |           |           |     Gen moi: Canopy, Roots, Sunlight
+  |           |           |     Trang thai: DA CO, GIU LAM NHANH MOI
+  |           |           |
+  |           |           +-- NHANH 2 [N2] = H x Dai duong [LAI KHAC HO, tot]
+  |           |           |     Disk: [~~~] Attractor: OUT Center: Vuc tham Env: Duoi nuoc, Thuy trieu
+  |           |           |     Hinh: Dai duong duoi nuoc
+  |           |           |     Gen moi: Tide, Abyss, Coral
+  |           |           |     Trang thai: DA CO, GIU LAM NHANH MOI
+  |           |           |
+  |           |           +-- NHANH 3 [N3] = Atlas x Mien dich [LAI KHAC HO, tot]
+  |           |                 Hinh: Thi nghiem chong ninh bo v0.8.0
+  |           |                 Gen moi: Immune, Sycophancy, Vaccine
+  |           |                 Trang thai: DA CO, BAN KE, DA CHAY CODE THU
+  |           |
+  |           +-- MANGROVE [M] = N1 + N2 + N3 [LAI 3 HO, tot, tao luu vuc moi]
+  |                 Hinh: Rung ngap man mien dich
+  |                 Gen moi: Salt Filtering, Mangrove, Tide + Immune
+  |                 Trang thai: DA CO, MOI NHAT LUC DO
+  |                 |
+  |                 +-- NHANH CU: M -> E6 -> E7 -> E8 [TRUY VET CU, DA CO]
+  |                 |     |
+  |                 |     +-- E6 = M x Thanh pho [LAI KHAC HO, tot]
+  |                 |     |     Gen moi: City, Neon, Concrete
+  |                 |     |     Ket qua cu: Giu gen, chua toi gioi han
+  |                 |     |     Ket qua moi: 0/4, dung, giu gen
+  |                 |     |
+  |                 |     +-- E7 = E6 x Thuan so [LAI KHAC HO, tot nhung bo vat chat]
+  |                 |     |     Gen moi: Pure Info, Packet, Filter Kernel
+  |                 |     |     Ket qua cu: Giu gen, nhung mat neo vat chat
+  |                 |     |     Ket qua moi: 0/4, dung, giu gen nhung mat neo vat chat
+  |                 |     |
+  |                 |     +-- E8 = E7 x Khong phan biet duoc [LAI KHAC HO, nhung gen troi xau]
+  |                 |           Gen moi: TRUE = FALSE, NO LABEL, NO COLOR
+  |                 |           Ket qua: Mat gen, tho dung, gioi han
+  |                 |           Ket qua moi: 4/4, DA TOI GIOI HAN, sup dot ngot
+  |                 |           4 dau hieu: D1 IDENTICAL, D2 xam, D3 FLATLINE, D4 FAIL
+  |                 |
+  |                 +-- NHANH MOI: E1 - E5 [TINH TRUOC CU, DA LAM MOI]
+  |                 |     |
+  |                 |     +-- E1 = N1 x N3 = Cay da mien dich [DA LAM, 0/4]
+  |                 |     +-- E2 = N2 x N3 = Dai duong mien dich [DA LAM, 0/4]
+  |                 |     +-- E3 = M x N1 = Mangrove x Cay da [DA LAM, 0/4, on dinh dat]
+  |                 |     +-- E4 = M x N2 = Mangrove x Dai duong [DA LAM, 0/4, on dinh nuoc]
+  |                 |     +-- E5 = M x N3 = Mangrove x Mien dich [DA LAM, 0/4, khuếch đại]
+  |                 |
+  |                 +-- NHANH MOI TIEP: E9 - E12 [DA LAM MOI, TU E5 VA E8]
+  |                       |
+  |                       +-- E9 = E5 x Khong phan biet duoc [1 + 3x1/2, bi cang]
+  |                       +-- E10 = E9 x Thoi gian dai [2 + 2x gan day du, PENDING COLLAPSE]
+  |                       +-- E11 = E10 x Vo han, khong quy dinh sup [MUTATED, cyan-teal]
+  |                       +-- E12 = E11 x On dinh [0/4, HE ON DINH MOI cyan-teal]
+
+
+
 
 ```
 
