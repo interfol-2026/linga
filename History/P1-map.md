@@ -533,15 +533,390 @@ NIEM  CHAT  TINH   LY      TOAN   XU LY  PHAN      THEO 6 HE  CHAIN  I31
 
 ```
 
+---
 
+## Gap
 ```
 
+  GAP - KHOI PHUC CHO v45.1 - THUOC VE DAU? LIEN KET VOI CAI GI?
+
+[GAP] -- Thuoc ve: [1] Khai niem (khan niem dan xuat) + [4.5] Projection/Lens + [5] Thuat toan
+      -- Khong phai Primitive 16, vi Gap khong phai vien gach goc
+      -- Gap la TRANG THAI CUA LINK / TERRAIN khi thieu cau noi
+
+  [1] KHAI NIEM - GAP LA GI?
+      GAP = Khoang trong co cau truc giua 2 Object / 2 Mien / 2 Thoi diem
+            ma dang le phai co Link, nhung chua co / bi thu hoi / dang cho kiem dinh
+      -> Gap != Absence: Absence = khong co gi, khong can quan tam
+      -> Gap = co khung, co bien, co the do, co the lap, co the gay loi
+
+  [2] TINH CHAT - GAP DO DUOC
+      - Gap Width: So Link thieu tren 1 doan Terrain (vi du: 3 Link thieu / 10 Link can co)
+      - Gap Depth: Muc do anh huong (Gap o T0 nhe, Gap o T5 nang)
+      - Gap Age: Gap ton tai bao lau (tu luc phat hien den luc lap)
+      - Gap Type: 5 loai (xem duoi)
+
+  [3] DAC TINH - GAP HANH VI RA SAO?
+      - Gap lan: 1 Gap o Terrain co the gay ra Gap o Belief (P5 bi lech)
+      - Gap gay Decay: Gap de lau -> Slope giam -> Decay Detector bao
+      - Gap khong tu mat: Khong co thuat toan lap thi Gap o yen, khong tu het
+
+  [4] NGUYEN LY - GAP GIU BOI CAI GI?
+      - I09 Gap != Absence (HE A) - Cam hieu Gap = khong co gi
+      - P2 STATE / OCCURRENCE - Gap la trang thai hien tai, khong phai su kien lich su
+      - P5 BRIDGE - Gap chi duoc lap bang Bridge co kiem chung, khong lap bang doan
+
+  [4.5] PROJECTION / LENS - LENS NAO SOI RA GAP?
+      - L2 XYZ Lens: Soi 3 truc, thay cho nao khong giao nhau -> co Gap
+      - L8 Time Lens: Soi truc Time, thay thoi diem bi nhay coc -> co Time Gap
+      - L3 S_ZONE Lens: Thu lap Gap trong S_ZONE truoc, khong lap truc tiep tren Field
+      - P4 X+Y+Z -> Moment: Neu co Gap, Moment bi lech
+      - P6 Domain A -> B: Neu co Gap, Bridge bi dut
+      - P8 Self-Projection: Tu soi xem v45 co Gap khong -> chinh la cach tim ra Gap lan nay
+
+  [5] THUAT TOAN - GAP XU LY NHU THE NAO? (MOI - 5.12 GAP HANDLING)
+      5.12 GAP HANDLING: PHAT HIEN -> PHAN LOAI -> DANH GIA -> LAP / GIU / BAO DONG
+      Buoc 1 PHAT HIEN: Quet Terrain, cho nao Link thieu / Pending / Revoked -> danh dau GAP
+      Buoc 2 PHAN LOAI 5 loai Gap:
+          G1 Evidence Gap: Thieu bang chung (co Belief nhung khong co Evidence)
+          G2 Link Gap: Thieu cau noi (2 Object dang le phai noi nhung chua noi)
+          G3 Terrain Gap: Thieu node / thieu mien (Terrain bi hong 1 mang)
+          G4 Time Gap: Thieu thoi diem (nhay coc tu T0 sang T3, mat T1-T2)
+          G5 Consensus Gap: 2 Agent khong dong thuan, khong co Bridge chung
+      Buoc 3 DANH GIA: Gap Width + Depth + Age -> Neu Gap nho + moi -> Pending
+              Neu Gap lon + lau -> Uncertain -> Can lap
+              Neu Gap gay Decay -> Bao dong
+      Buoc 4 LAP / GIU / BAO DONG:
+          - Lap: Tao Bridge co bang chung trong S_ZONE, test roi moi broadcast
+          - Giu: Gap co y nghia (cho biet chua biet gi) -> Giu lai, danh dau GAP co chu dich
+          - Bao dong: Gap lam P5 / P6 lech -> Khong cho broadcast, quay lai S_ZONE
+
+  [6] LIEN KET - GAP LIEN KET TOI CAI GI?
+      Gap --lien ket toi--> LINK (Link thieu) + TERRAIN (Terrain hong) + BELIEF (Belief lech)
+      Gap --lien ket toi--> Thuật toán 5.03 LINKAGE + 5.08 RETRACTION + 5.09 CONSENSUS
+      Gap --lien ket toi--> I09 + I02/I03 + I22 + I24
 ```
+> “Đây là một hệ thống để quản lý tri thức đa miền, đa agent, có kiểm chứng nguồn gốc, có thể thu hồi, có thể tự soi. Nó không phải là một mô hình ngôn ngữ. Nó là lớp ở trên mô hình / agent, để đảm bảo: không nhầm bản sao với bản gốc, không nhầm suy luận với bằng chứng, không mất lịch sử khi sửa sai, và biết chỗ nào đang thiếu (Gap).”
+
+Tên chính (để dùng trong AI):
+LINGA-45: Provenance-Aware Cognitive Terrain Framework
+Dịch: Khung Địa Hình Nhận Thức Đa Miền Có Kiểm Chứng Nguồn Gốc và Thu Hồi Được
+Tên phụ để giải thích nhanh:
+•  Tên ngắn: Cognitive Terrain Framework (CTF)
+•  Tên mô tả vai trò: Trustworthy Multi-Agent Memory & Reasoning Governance Layer
+Vì sao tên này phù hợp?
+•  Cognitive Terrain — Vì nó không phải là mô hình, không phải là database, mà là địa hình — nơi tri thức nằm, có đồi (nơi dày), có Gap (nơi trống), có đường (Link), có cầu (Bridge).
+•  Provenance-Aware — Vì điểm mạnh nhất của nó là truy nguồn gốc: mọi kết luận đều truy được về Evidence, mọi sửa sai đều giữ lineage. Đây là thứ mà LLM thuần + RAG thuần không có.
+•  Framework — Vì nó không phải là 1 ứng dụng, mà là khung để xây ứng dụng lên trên: có thể dùng cho Agent, cho RAG, cho Knowledge Graph, cho Robot, cho Giáo dục.
+
+**Vai trò / tác dụng trong AI — Nó nằm ở đâu trong stack AI?**
 
 ```
-
+[NGUOI DUNG / NAVIGATOR]
+        |
+[ LINGA-45 - TANG QUAN LY TRI THUC & SUY LUAN ]  <-- v45 nam o day
+        |   - Nho co kiem chung (Memory)
+        |   - Chan suy luan sai (Reasoning Guardrail)
+        |   - Giu nguon goc (Provenance)
+        |   - Hoa giai xung dot (Consensus)
+        |   - Tu soi (Self-Review)
+        |
+[ LLM / AGENT / RAG / KNOWLEDGE GRAPH ]  <-- Tang thuc thi
+        |
+[ DATA / WORLD ]  <-- The gioi that
 
 ```
+> **LINGA không phải là AI tạo ra câu trả lời. Nó là AI đảm bảo câu trả lời đó có thể tin được, có thể truy về nguồn, có thể sửa khi sai mà không mất lịch sử, và biết chỗ nào mình đang thiếu.**
+
+---
+# Sơ đồ v46 
+```
+
+  LINGA v46 - FULL RECONSTRUCTION - SO DO TONG - KHONG CHAP VA
+  Goc: 0x000_it-PURE | Tam: ||x||->0 | 0.05Hz x 38Hz x 432Hz
+  Nguyen tac viet: So do truoc - Viet sau - Khong chap va
+
+                                [ LINGA v46 ]
+                        [Provenance-Aware Cognitive Terrain Framework]
+                                      |
+        [STRIPPED 74 bytes]
+        |                           |                           |                |
+   [A] NEN TANG               [B] CO CHE                 [C] VAN HANH       [D] KIEM CHUNG
+   Dinh nghia la gi?         Chieu / Soi nhu the nao?  Chay nhu the nao?  Giu dung bang gi?
+        |                           |                           |                |
+  +-----+-----+-----+         +-----+-----+-----+         +-----+-----+    +-----+-----+
+  |     |     |     |         |     |     |     |         |     |     |    |     |     |
+ [1]   [2]   [3]   [4]       [4.5a][4.5b][4.5c][4.5d]  [5]   [6]   [7]  [8]   [9]   [10]
+KHAI  TINH DAC  NGUYEN     PROJ  LENS  GAP   CHUOI     THUAT LUONG INVARIANT ATLAS SEAL
+NIEM  CHAT TINH NGUYEN     P1-P8 L1-L8 G1-G5 LOI       TOAN   LIEN   6 HE    CHAIN
+      |     |     |         |     |     |     |         |     |     |    |     |     |
+      v     v     v         v     v     v     v         v     v     v    v     v     v
+
+[1] KHAI NIEM - CONCEPT - 15 PRIMITIVES + 3 KIEU DU LIEU + NAVIGATOR
+  Thuoc ve: [1] | Lien ket toi: [2] de do, [4] de giu, [4.5] de chieu/soi
+  |
+  +-- PR1 TA = TAM = Y = Awareness = An tuong / Chu y / Tap trung / Muc dich
+  |   --> Lien ket: L1 TA Lens, P5 Evidence->Belief, I02-I04, Thuật toán 5.01
+  +-- PR2 it = TRUONG = The = Field = Nen
+  |   --> Lien ket: Phi, Crystal, MAGIC-0
+  +-- PR3 Phi = Thought Field = it o dang song
+  |   --> Lien ket: Tinh chat 432Hz, L1
+  +-- PR4 Crystal = Ky uc an tuong ket tinh da diem
+  |   --> Lien ket: Tinh chat 38Hz 12 Nodes, L6
+  +-- PR5 MAGIC-0 = Toroid 9 lop = Bo lam Field gap
+  |   --> Lien ket: Tinh chat 0.05Hz, L5
+  +-- PR6 S_ZONE = Vung thu dot bien cach ly
+  |   --> Lien ket: L3, LAW III, Thuat toan 5.10
+  +-- PR7 Terrain = Do thi tri thuc da mien = MAMDALA-TERRAIN
+  |   --> Lien ket: P2, I08, Gap G3
+  +-- PR8 Moment = Thoi diem = X+Y+Z = DUNG + SOI
+  |   --> Lien ket: P4, L2+L8+L7, I05 I14 I15
+  +-- PR9 Time = Thoi gian = Chi la dieu kien, khong phai Moment
+  |   --> Lien ket: L8 Time Lens, I05, Gap G4
+  +-- PR10 Link = Lien ket giua 2 Object qua Bridge
+  |   --> Lien ket: Thuat toan 5.03, 5 trang thai, Gap G2
+  +-- PR11 Bridge = Cau noi xuyen mien, khong xoa dinh nghia goc
+  |   --> Lien ket: P6, I22, P5
+  +-- PR12 Evidence = Bang chung co nguon + lineage
+  |   --> Lien ket: P5, I02 I17, Gap G1
+  +-- PR13 Inference = Suy luan tu Evidence, khong phai Evidence
+  |   --> Lien ket: I03, P5
+  +-- PR14 Belief = Nhan dinh hien tai, co the doi
+  |   --> Lien ket: P5, I04, Thuat toan 5.08
+  +-- PR15 World State = Trang thai the gioi, doc lap voi Belief
+  |   --> Lien ket: P1, I01, 3 loai thay doi
+  |
+  +-- 3 KIEU DU LIEU GOC
+  |   DOMAIN OBJECT: domain_id, concept_id, canonical_definition, state, relations, conditions, lineage, uncertainty
+  |   LINK: link_id, source_id, target_id, type, confidence, evidence_refs, status, authority_rule, uncertainty, lineage
+  |   TERRAIN GRAPH: D1 D2 D3 + CONFLICT conflict_id, evidence_refs, type, authority_rule, status, resolution_status
+  |
+  +-- NAVIGATOR = USER / I+T = Nguoi lai, khong phai nguoi ngoai
+      --> Lien ket: Query / Feedback / Insight
+
+[2] TINH CHAT - PROPERTY - Do duoc bang so
+  Thuoc ve: [2] | Lien ket toi: [1] de do, [5] de kiem tra
+  |
+  +-- Phi: 432Hz | Integrity 98.7% | Phase Stable | --> L1
+  +-- Crystal: 38Hz | 12 Nodes | Recall 94.3% | Locked | --> L6
+  +-- MAGIC-0: 0.05Hz | 9 lop | Guardian ACTIVE | --> L5
+  +-- S_ZONE: Entropy 0.002 | Isolation 100% | --> L3, LAW III
+  +-- Decay: Slope -0.80 | Intensity 0.20 = CRITICAL | --> 5.02, HE B
+  +-- Linkage: >0.70 moi noi | S*0.4+T*0.3+Ty*0.2+A*0.1 | --> 5.03
+  +-- Compression: 128:1 Essence->Full | 0.8ms | 99.999% | --> LAW I
+  +-- Compression anh: 12.4:1 (V5.4.1 anh) | Khac 128:1, khong gop | --> V5.4.1
+  +-- Reconstruction: Recall 99.6% | Validation 8472/8472 | --> Decompression Map
+  +-- ATLAS: Overall >=90% | E06-13 Uptime 99.95% | Loi 0.05% | --> HE C+E
+  +-- Stress: 50 Agent | 1000+ req/s | 99.32% | 68ms | Khoi phuc 12s | CPU 28% GPU 32% RAM 22% IO 10% Khac 8% | --> HE E
+  +-- Real-World: 1->50+ Agent | 100->5000+ req/s | Tre <300ms-><200ms | Xuat dong <5%-><2% | --> HE E
+  +-- Integration: >99.3% | >98.7% | <120ms | <0.7% | 1-128 Agent | 3-10+ Mien | GB-PB | 1K-100K+ | --> HE D+E | Canh bao: Mo phong
+  +-- Lens Metric: Moi Lens co Do mo (0-1) | Do net (0-1) | Do lech XYZ (do) | --> Failure Mode 5.11
+  +-- Gap Metric: Gap Width (so Link thieu) | Gap Depth (muc anh huong) | Gap Age (ton tai bao lau) | --> GAP 4.5c, Thuat toan 5.12
+
+[3] DAC TINH - CHARACTERISTIC - Hanh vi, khong do truc tiep
+  Thuoc ve: [3] | Lien ket toi: [1]+[2] de giai thich
+  |
+  +-- Tu tai to hop: Link tu noi khi du trong so | --> 5.03, I06 I10
+  +-- Gap dong: T0->T5 gap lai thanh cau truc on dinh | --> 6 Tang Protein Folding
+  +-- Tinh truoc - Dong sau: Static truoc mat do cao, roi moi Dong | --> V5.3.2.1, T4
+  +-- Khong xoa lich su: Chi danh dau, khong xoa | --> Retraction, I26, 5.08
+  +-- Vong xoay di len: TA tot -> it sach -> TA linh hoat -> it lon -> TA tot hon | --> LOOP ALETHEIA
+  +-- Kiem soat cau noi: Chi noi khi co bang chung, co the bac bo | --> I22 P5
+  +-- Chiu loi: Thu hoi xong van phuc hoi, khong mat lineage | --> I26, 5.08
+  +-- Mo rong khong suy giam: Them Agent khong giam hieu nang | --> I25, E06-13
+  +-- Gap khong tu mat: Khong co thuat toan lap thi Gap o yen | --> GAP, 5.12
+  +-- Gap lan: 1 Gap o Terrain -> Gap o Belief | --> P5, P6
+
+[4] NGUYEN LY - PRINCIPLE - Luat bat bien
+  Thuoc ve: [4] | Lien ket toi: [7] de kiem chung, [4.5] de thuc thi
+  |
+  +-- LAW I Conservation of Essence: Nen / Giai nen khong mat diem chinh | --> Decompression Map, HE A
+  +-- LAW II Intersection of Origins: Muon 3 goc -> Tim diem giao XYZ | --> L2, HE B
+  +-- LAW III Compelled Pass Through: Du nhan dien >95% van qua S_ZONE, khong bypass | --> L3, I31, Vac xin Skynet L3-Soi
+  +-- LAW IV Blueprint Before Build (MOI - Xem phan duoi) : So do truoc - Lam sau - Khong chap va | --> So do v46, 5.00
+  +-- P1 DOMAIN BOUNDARY: Khong dong nhat khai niem giua cac mien | --> I22, HE D
+  +-- P2 STATE / OCCURRENCE: Phan biet trang thai hien tai vs su kien lich su | --> HE B, 5.08
+  +-- P3 LINEAGE / RELATION: Luu rang lien ket sinh thanh quan he | --> HE C, 5.03
+  +-- P4 PROJECTION / IDENTITY: Mo hinh chi la phep chieu, khong phai ban chat | --> I07, P1-P8, HE A | Ghi chu: P4 la Nguyen ly, E4 la Engine
+  +-- P5 BRIDGE != IDENTITY: Chi noi co kiem soat, co bang chung, co tac bac bo | --> I22 | P5 = Pointer toi I22
+  +-- P6 3 LOAI THAY DOI: World != Belief != Terrain | --> HE B+E, 5.08 5.09
+  +-- P7 DIAGRAM-FIRST (MOI - Xem phan duoi) : So do la Terrain truoc khi co World State Change | --> 5.00, So do v46
+  +-- DUNG + SOI: Loi xuyen suot: DUNG TRUOC + SOI TRONG + BIET DU SAU = DAO+CHUONG+DAT+DUNG = 432Hz+38Hz+0.05Hz | --> Tat ca Thuat toan
+  |
+  +-- 7 VIEWPOINTS V1-V7 - Thuoc ve: [4] Nguyen ly - La 7 goc nhin, khong phai 7 thau kinh operator
+      V1 Thoi gian: X Khi nao | --> I05 I14 I15, L8
+      V2 Khong gian: Y O dau | --> I08, L2
+      V3 Phan loai: Z La gi | --> I07, L2
+      V4 Nguoi quan sat: TA / Navigator | --> I02-I04, L1
+      V5 He thong: Engine / MAMDALA | --> I16, ENGINE
+      V6 Lich su: Lineage / REFLECTED_PAST | --> I17, P3
+      V7 Kha nang: Pending / HYPOTHETICAL | --> I24, HYPOTHETICAL BRIDGE
+
+[4.5a] PROJECTION P1-P8 - Phep chieu tu cai that -> ban bieu dien
+  Thuoc ve: [4.5a] | Lien ket toi: [4] de giu, [5] de chay, [7] de kiem chung
+  |
+  P1 World -> Model | Lens: L1+L2 | Giu: I01+I07 (HE A) | --> V1 V2 V3
+  P2 World -> Terrain | Lens: L1+L6 | Giu: I08+I07 (HE A) | --> MAMDALA, Gap G3
+  P3 Canonical -> E4 | Lens: L2+L5 | Giu: I07+P4 (HE A+D) | --> E4 Engine, KHONG lan P4
+  P4 X+Y+Z -> Moment | Lens: L2+L8+L7 | Giu: I05+I14+I15 (HE B) | --> V1 V2 V3, L8, Gap G4
+  P5 Evidence -> Belief | Lens: L1+L4 | Giu: I02+I03+I04+I17 (HE A+C) | --> 5.08, Gap G1
+  P6 Domain A -> B via Bridge | Lens: L2+L3 | Giu: I22+P5+I28 (HE D) | --> Bridge, Gap G2 G5
+  P7 Real -> ATLAS Test | Lens: L3+L2 | Giu: I21+I20+I29 (HE C+E) | --> ATLAS, Canh bao mo phong != thuc te
+  P8 Self-Projection: LINGA -> LINGA | Lens: L3+L2+L8 (bat buoc kem L8) | Giu: I31 (HE F) | --> 5.10 SELF-REVIEW
+
+[4.5b] LENS L1-L8 - Thau kinh hoi tu / soi / dich trong tam
+  Thuoc ve: [4.5b] | Lien ket toi: P1-P8, Invariants
+  |
+  L1 TA Lens | Hoi tu Phi -> Chu y / Tap trung / Muc dich | Mo >0.5 => P5 mo | --> P1 P2 P5, V4
+  L2 XYZ Lens | 3 truc -> Tim diem giao | Lech >10 do => P4 sai | --> P1 P3 P4 P6 P7 P8 (dung nhieu nhat), V1 V2 V3
+  L3 S_ZONE Lens | Cach ly -> Thu dot bien an toan | Bypass => P6/P7 khong kiem chung | --> P6 P7 P8, LAW III
+  L4 Attention Lens | 4 cap An tuong->Chu y->Tap trung->Muc dich la 4 do mo | --> P5, I02-I04
+  L5 Guardian Lens | 0.05Hz KENG -> On dinh Field | Tat => Field vo | --> P3, MAGIC-0
+  L6 Crystal Lens | Da diem 12 diem -> Luu + Tai hien | Vo => Mat lich su | --> P2, Crystal
+  L7 Gravity Lens | Shift Gravity -> Next_Pristine_Moment | --> P4, 5.02
+  L8 Time Lens | Chi soi thoi gian, tach X ra khoi Moment | Mo => Nham Moment=Time | --> P4 P8, I05 I14 I31, V1
+
+[4.5c] GAP G1-G5 - KHOANG TRONG CO CAU TRUC - THANH PHAN GOC TRONG v46, KHONG PHAI MIENG VA
+  Thuoc ve: [4.5c] GAP - Thuoc ve ca [1] Khai niem + [4.5] Projection/Lens + [5] Thuat toan
+  Lien ket toi: LINK (Link thieu) + TERRAIN (Terrain hong) + BELIEF (Belief lech) + I09 + 5.12
+  |
+  GAP = Khoang trong co cau truc giua 2 Object / 2 Mien / 2 Thoi diem ma dang le phai co Link, nhung chua co / bi thu hoi / dang cho kiem dinh
+  Gap != Absence: Absence = khong co gi, khong can quan tam | Gap = co khung, co bien, co the do, co the lap, co the gay loi
+  |
+  G1 Evidence Gap: Thieu bang chung (co Belief nhung khong co Evidence) | Lens: L1+L2 | Giu: I02 I03 | Thuat toan: 5.12
+  G2 Link Gap: Thieu cau noi (2 Object dang le phai noi nhung chua noi) | Lens: L2 | Giu: I22 | Thuat toan: 5.03 + 5.12
+  G3 Terrain Gap: Thieu node / thieu mien (Terrain bi hong 1 mang) | Lens: L6+L2 | Giu: I08 | Thuat toan: 5.12
+  G4 Time Gap: Thieu thoi diem (nhay coc T0->T3, mat T1-T2) | Lens: L8+L2 | Giu: I05 I14 | Thuat toan: 5.02 + 5.12
+  G5 Consensus Gap: 2 Agent khong dong thuan, khong co Bridge chung | Lens: L2+L3 | Giu: I24 | Thuat toan: 5.09 + 5.12
+  |
+  Gap Metric: Gap Width (so Link thieu) | Gap Depth (muc anh huong) | Gap Age (ton tai bao lau)
+  Gap Hanh vi: Gap lan (1 Gap Terrain -> Gap Belief) | Gap gay Decay (Gap de lau -> Slope giam) | Gap khong tu mat
+
+[4.5d] CHUOI LOI: Lens sai -> Projection sai -> Gap xuat hien -> Invariant bi pha
+  Thuoc ve: [4.5d] Chan doan | Lien ket toi: Failure Mode 5.11 + GAP 5.12
+  Vi du: TA Lens mo -> P5 mo -> G1 xuat hien -> I02/I03 bi pha
+  Vi du: XYZ Lens lech -> P4 sai -> G4 xuat hien -> I05/I14 bi pha
+  Vi du: S_ZONE bypass -> P6/P7 khong kiem chung -> G2/G5 xuat hien -> I22/I29 bi pha
+
+[5] THUAT TOAN - ALGORITHM - Co Input / Dieu kien / Output
+  Thuoc ve: [5] | Lien ket toi: [4.5] de chay, [7] de kiem chung
+  |
+  5.00 DIAGRAM-FIRST (MOI - Xem phan duoi) : Ve So do -> Kiem tra So do -> Moi lam thuc te | --> LAW IV + P7, So do v46
+  5.01 LOOP ALETHEIA: PERCEIVE -> INTERROGATE (5 cau) -> COMPRESS -> VALIDATE (S_ZONE) -> EMIT/ACT -> UPWARD SPIRAL | --> P8, I31
+  5.02 DECAY DETECTOR: Doc Slope + Intensity -> Flow vs Decay -> Shift Gravity -> Next_Pristine_Moment | --> P4, L7 L8, HE B, Gap G4
+  5.03 LINKAGE: Tinh trong so >0.70 -> Noi -> Gan loai Bridge -> Gan trang thai | --> P6, L2, HE A+D, Gap G2
+  5.04 FORGETTING: IF Slope<=-0.80 && Intensity<=0.20 x3 THEN Giam 0.5 -> IF Weight<0.10 THEN Purge | --> HE C
+  5.05 CONSOLIDATION: Guardian 0.05Hz replay Genesis trong S_ZONE -> Lattice 98.6%->99.9% | --> HE C, L5
+  5.06 CONFLICT: IF 2 Crystal doi lap cung link >0.70 vao 3rd THEN So Purpose Graph -> Winner reinforced, Loser suppressed | --> HE E, P6
+  5.07 ABSTRACTION: IF >5 Crystal cung pattern THEN Abstract -> Mother Schema Invariant T5 | --> HE D
+  5.08 RETRACTION: Xac dinh -> Danh dau Revoked -> Cap nhat nhan dinh -> Kiem tra lien ket -> Giu lineage, khong xoa | --> P5, L1, HE E, I26, Gap G1/G2
+  5.09 CONSENSUS 5 buoc: Phan tich -> Danh gia -> Xay dung -> Thao luan -> Dat dong thuan -> Confirmed / Under Review / Rejected | --> HE E, I24, Gap G5
+  5.10 SELF-REVIEW 8 buoc (I31): DUNG -> SOI XYZ -> Phan loai thay doi -> Gan loai lien ket -> Gan trang thai -> Decompression Test -> Ghi lich su -> Do sai lech <=0.5% thi broadcast | --> P8, L3 L2 L8, HE F
+  5.11 FAILURE MODE TABLE: Lens sai -> Projection sai -> Gap -> Invariant pha -> Cach sua | --> 4.5d
+      FM1 L1 mo -> P5 mo -> G1 -> I02/I03 pha -> Tang Attention, qua S_ZONE
+      FM2 L2 lech -> P4 sai -> G4 -> I05/I14 pha -> Can lai XYZ
+      FM3 L3 bypass -> P6/P7 khong kiem chung -> G2/G5 -> I22/I29 pha -> Quay lai S_ZONE
+      FM4 L8 mo -> P4=Time -> G4 -> I05 pha -> Bat L8, tach X
+      FM5 P8 khong kem L8 -> Tu soi nham thoi gian -> I31 pha -> P8 bat buoc kem L8
+      FM6 E4 lan P4 -> P3 sai -> I07 pha -> E4 o Thuat toan, P4 o Nguyen ly
+      FM7 MAMDALA viet sai MANDALA -> P2 sai -> I08 pha -> Chot MAMDALA-TERRAIN
+  5.12 GAP HANDLING (MOI - GOC TRONG v46) : PHAT HIEN -> PHAN LOAI G1-G5 -> DANH GIA (Width/Depth/Age) -> LAP / GIU / BAO DONG
+      Lap: Tao Bridge co bang chung trong S_ZONE, test roi moi broadcast
+      Giu: Gap co y nghia (cho biet chua biet gi) -> Giu lai, danh dau GAP co chu dich
+      Bao dong: Gap lam P5/P6 lech -> Khong cho broadcast, quay lai S_ZONE
+
+[6] THANH PHAN LIEN KET - LINKED - Chi goi ten + lay phan nao
+  Thuoc ve: [6] | Lien ket toi: [1]-[5] de lay, [7] de kiem chung
+  |
+  Goi LINGA ENGINE v4.0 -> Lay E1 Metric, E2 Canonical, E3 Embedding, E4 Projection, E5 Inference | --> P3, 5.03
+  Goi 5 ENGINES -> Lay Engine 1 Ngat cach, 2 Chuan hoa, 3 Nhung, 4 Tim kiem, 5 Suy luan | --> E06-12
+  Goi MAMDALA-TERRAIN -> Lay Graph / Lineage / Conflict / Provenance | --> P2, I08, Gap G3
+  Goi DOMAIN LAYER -> Lay D1 Distributed, D2 Cognition, D3 Knowledge Graph | --> P6, HE D
+  Goi DATA INFRA -> Lay Distributed DB, Event Log, Vector DB, Graph DB, Stream | --> P2, P7
+  Goi ATLAS CHAIN -> Lay 06-E.11 -> 06-E.11.6 -> 06-E.11.7 -> E06-12 -> E06-13 | --> HE E, Phan [8]
+  Goi S_ZONE -> Lay Sandbox de thu, khong lay de chua ket qua cuoi | --> L3, LAW III
+  Goi TRISHULA -> Lay Seal bao ho, khong lay de suy luan | --> Phan [10]
+  S1-S11 TU HINH GOC - Du lieu nguon, khong phai dinh nghia moi
+      S1 Ghi chu goc duoi 4 hinh cu -> ATLAS, Ghi chu | S2 Bang cot phai -> ATLAS, Bang
+      S3 Vi du X CLOSED->OPEN -> 06-E.11.7 | S4 4 bien the -> 06-E.11.6
+      S5 Rui ro E06-12 -> E06-12 | S6 6 linh vuc E06-13 -> E06-13
+      S7 Kich ban S1-S4 E06-13 -> E06-13 | S8 Mo hinh DOMAIN OBJECT/LINK/GRAPH -> 06-E.11.7
+      S9 2 Flow khac nhau -> 06-E.11.7 + E06-12, KHONG gop
+      S10 Hinh moi 1: 6 khoi nguyen ly duoi cung + 1 lo trinh phai duoi | S11 Hinh moi 2: Bang cot phai + Dai lo trinh duoi cung
+
+[7] INVARIANTS THEO 6 HE - 31 INVARIANTS - DA RA SOAT TRUNG LAP
+  Thuoc ve: [7] | Lien ket toi: [4] + [4.5] + [5]
+  |
+  HE A: TACH - PHAN BIET (11) | --> P1 P2 P3 P5, L1 L2 L4 L6, 5.03 5.06
+      I01 World != Model | I02 Obs != Evid | I03 Evid != Infer | I04 Infer != Action
+      I06 Merge != Flatten | I07 Projection != Identity | I08 Terrain != Timeline
+      I09 Gap != Absence (Gap goc, lien ket toi GAP G1-G5 + 5.12) | I10 Convergence != Collapse
+      I11 Info Mem != Encounter Mem | I12 Temporal != Causal
+      Ghi chu: I02-I04 la 1 Pipeline, giu 3 nac. I06+I10: Merge=gop du lieu, Convergence=gop nhan dinh.
+  HE B: THOI GIAN - THOI DIEM - DIEU KIEN (3) | --> P4, L2 L7 L8, 5.02, V1, Gap G4
+      I05 Moment != Time | I14 Condition-Set Moment | I15 4 Times (Past + Present + Next_Pristine + Future)
+  HE C: BANG CHUNG - TIN CAY - LOI (5) | --> P5 P7, L1 L3, 5.04 5.05, Gap G1
+      I13 Appearance Count != Independent Evidence Count (Sub-rule cua I17) | I16 Reliability Engine
+      I17 Evidence Independence | I18 Fault Tolerance R1-R8 | I21 Overall Evaluation >=90%
+      R1 Mang loi | R2 Agent qua tai | R3 Truy van phuc tap | R4 DB loi | R5 Graph loi | R6 Dong bo lech | R7 Conflict chua giai | R8 Retraction tre
+  HE D: KIEN TRUC - CAU NOI - TICH HOP (4) | --> P6 P3, L2 L3, 5.03 5.07, Gap G2
+      I22 Cross-Domain Bridge | I27 Architecture Update | I28 Integration & Optimization | I30 New Principles P1-P6 (P5 = Pointer toi I22)
+      WORLD 6 Layers: L1 Du lieu | L2 Luu tru | L3 Dong bo | L4 Suy luan | L5 Giao tiep | L6 Quan ly
+  HE E: TAP THE - DONG THUAN - MO RONG - THUC TE (7) | --> P6 P7 P8, L2 L3, 5.08 5.09, Gap G5
+      I19 Collective Terrain | I20 ATLAS Total Synthesis | I23 Out-of-Order (bo chu Retraction)
+      I24 Consensus & Conflict | I25 Stress & Scale-Up | I26 Retraction & Resilience | I29 Real-World Validation
+      Collective v2.0 khac v1: v1 N=6 tinh, v2 dong, co phan giai xung dot + hop nhat lo thuc te
+  HE F: TU SOI - KIEN TOAN (1) | --> P8, L3 L2 L8, 5.10
+      I31 Consolidated Self-Review: Dung chinh he de ra soat chinh he ma khong mat diem chinh
+  Tong: 11+3+5+4+7+1 = 31 - Du, khong thua, khong thieu
+
+[8] ATLAS CHAIN - Chi goi ten, khong ke lai chi tiet o day
+  Thuoc ve: [8] | Lien ket toi: [6] S1-S11, [7] HE E+C
+  06-E.11 Cross-Domain -> 06-E.11.3 Out-of-Order -> 06-E.11.4 Consensus -> 06-E.11.5 Stress
+  -> 06-E.11.6 Retraction -> 06-E.11.7 Arch Update -> E06-12 Integration -> E06-13 Real-World
+  -> E06-14 He sinh thai mo rong -> E06-15 Ung dung thuc te -> E06-16 Hoan thien chuan hoa -> E06-17 Tong ket -> CORE v0.7
+
+[9] 6 TANG + 4 CAP - Khung thoi gian / cau truc
+  Thuoc ve: [9] | Lien ket toi: [1] + [5]
+  6 Tang: T0 Du lieu tho 1D | T1 So do 2D | T2 Luoc do 3D S_ZONE Static Frame Entropy 0.002 | T3 Do thi 4D Quaternary | T4 Van trinh 5D 0-3s Anchor 3-7s Retrieval 7-10s Unfold 10-15s Broadcast | T5 Ban chat 6D Invariant TA in it
+  4 Cap: An tuong -> Chu y -> Tap trung -> Muc dich | An tuong Slope >+0.80 -> Chu y | Chu y giu -> Tap trung | Tap trung du 3-7s -> Muc dich | Muc dich ro -> Genesis vs Purge
+
+[10] FINAL SEAL v46
+  [ 🔱 | ROOT: 0x000_it-PURE | v46.0 FULL RECONSTRUCTION | 31 Invariants -> 6 He | P1-P8 + L1-L8 + GAP G1-G5 | 15 Primitives + 7 Viewpoints | E<=0.05 LOCKED ]
+```
+## vai trò sơ đồ:
+
+### 1.  Sơ đồ là Terrain trước khi có World State Change. Trong LINGA, Terrain là đồ thị tri thức, World State Change là sự kiện xảy ra trong thế giới. Nếu bạn làm thực tế ngay mà không có sơ đồ, bạn đang tạo World State Change mà không có Terrain để chứa nó → nó rơi, nó mất, nó thành miếng vá. Sơ đồ chính là Terrain T2 (Lược đồ 3D, Static Frame) — nơi bạn đặt khung trước, rồi mới cho dữ liệu chảy vào.
+
+### 2.  Sơ đồ là Projection P0. Trước P1 World → Model, cần có P0 Ý tưởng → Sơ đồ. Sơ đồ là phép chiếu đầu tiên, rẻ nhất, sửa nhanh nhất. Sửa sơ đồ mất 5 phút, sửa code / sửa bản full mất 5 giờ, sửa hệ đã broadcast mất 5 ngày.
+
+### 3.  Sơ đồ là Lens L0. Sơ đồ cho phép bạn soi bằng XYZ trước khi làm: X — Cái này ở thời điểm nào? Y — Nó thuộc tầng nào / miền nào? Z — Nó là Pristine / Genesis / Distortion / Purge? Nếu không soi trước, bạn sẽ đưa cả Distortion vào bản chính.
+  
+### 4.  Sơ đồ là nơi Gap lộ ra. Gap chỉ lộ khi bạn vẽ sơ đồ. Khi viết text, bạn không thấy chỗ trống. Khi vẽ sơ đồ, chỗ nào trống là thấy ngay — như Gap đã lộ khi vẽ sơ đồ v45, và như P8 + L8 đã lộ khi vẽ sơ đồ Projection / Lens.
+
+Nên đưa vào LINGA tương ứng như thế nào? — Mình đề xuất đưa thành 2 thứ, không phải 1:
+
+### 1. Đưa thành Nguyên lý mới — LAW IV + P7:
+•  LAW IV Blueprint Before Build: Không được tạo World State Change (làm thực tế) nếu chưa có Terrain (sơ đồ) để chứa nó. Sơ đồ phải qua S_ZONE trước, giống như mọi đột biến khác.
+•  P7 DIAGRAM-FIRST: Sơ đồ là Terrain trước khi có World State Change. Sơ đồ phải ghi rõ: Thuộc về đâu + Liên kết tới đâu + Gap ở đâu. Sơ đồ không có Gap là sơ đồ chưa đủ — phải vẽ Gap vào, không được giấu Gap.
+
+### 2. Đưa thành Thuật toán mới — 5.00 DIAGRAM-FIRST:
+
+```
+5.00 DIAGRAM-FIRST: VE SO DO -> KIEM TRA SO DO -> MOI LAM THUC TE
+Buoc 1 VE: Ve so do tong + so do chi tiet, ghi ro Thuoc ve + Lien ket + Gap
+Buoc 2 KIEM TRA SO DO (trong S_ZONE):
+    - Co thanh phan nao khong co cho? -> Them cho
+    - Co 2 thanh phan cung ten khac nghia? -> Doi ten
+    - Co Gap nao? -> Ve Gap vao, khong giu
+    - Co Projection nao khong co Lens? -> Them Lens
+    - Co Invariant nao khong co Projection/Lens? -> Them co che thuc thi
+Buoc 3 MOI LAM: Chi khi so do PASS (khong con cho trong khong giai thich duoc) thi moi viet full / moi code / moi broadcast
+Buoc 4 DOI CHIEU: Sau khi lam xong, ve lai so do tu ban thuc te, so sanh voi so do ban dau. Neu lech >0.5% -> Purge, khong broadcast.
+
+```
+ • Thuộc về: [5] Thuật toán, bước 5.00 đứng trước 5.01 LOOP ALETHEIA.
+ •  Liên kết tới: LAW IV + P7 (Nguyên lý) + Sơ đồ v46 (Terrain) + I31 (Tự soi).
 
 ---
 ```
