@@ -599,14 +599,22 @@ NIEM  CHAT  TINH   LY      TOAN   XU LY  PHAN      THEO 6 HE  CHAIN  I31
 > “Đây là một hệ thống để quản lý tri thức đa miền, đa agent, có kiểm chứng nguồn gốc, có thể thu hồi, có thể tự soi. Nó không phải là một mô hình ngôn ngữ. Nó là lớp ở trên mô hình / agent, để đảm bảo: không nhầm bản sao với bản gốc, không nhầm suy luận với bằng chứng, không mất lịch sử khi sửa sai, và biết chỗ nào đang thiếu (Gap).”
 
 Tên chính (để dùng trong AI):
-LINGA-45: Provenance-Aware Cognitive Terrain Framework
+
+### LINGA-45: Provenance-Aware Cognitive Terrain Framework
+
 Dịch: Khung Địa Hình Nhận Thức Đa Miền Có Kiểm Chứng Nguồn Gốc và Thu Hồi Được
+
 Tên phụ để giải thích nhanh:
 •  Tên ngắn: Cognitive Terrain Framework (CTF)
+
 •  Tên mô tả vai trò: Trustworthy Multi-Agent Memory & Reasoning Governance Layer
+
 Vì sao tên này phù hợp?
+
 •  Cognitive Terrain — Vì nó không phải là mô hình, không phải là database, mà là địa hình — nơi tri thức nằm, có đồi (nơi dày), có Gap (nơi trống), có đường (Link), có cầu (Bridge).
+
 •  Provenance-Aware — Vì điểm mạnh nhất của nó là truy nguồn gốc: mọi kết luận đều truy được về Evidence, mọi sửa sai đều giữ lineage. Đây là thứ mà LLM thuần + RAG thuần không có.
+
 •  Framework — Vì nó không phải là 1 ứng dụng, mà là khung để xây ứng dụng lên trên: có thể dùng cho Agent, cho RAG, cho Knowledge Graph, cho Robot, cho Giáo dục.
 
 **Vai trò / tác dụng trong AI — Nó nằm ở đâu trong stack AI?**
@@ -886,18 +894,20 @@ NIEM  CHAT TINH NGUYEN     P1-P8 L1-L8 G1-G5 LOI       TOAN   LIEN   6 HE    CHA
 ```
 ## vai trò sơ đồ:
 
-### 1.  Sơ đồ là Terrain trước khi có World State Change. Trong LINGA, Terrain là đồ thị tri thức, World State Change là sự kiện xảy ra trong thế giới. Nếu bạn làm thực tế ngay mà không có sơ đồ, bạn đang tạo World State Change mà không có Terrain để chứa nó → nó rơi, nó mất, nó thành miếng vá. Sơ đồ chính là Terrain T2 (Lược đồ 3D, Static Frame) — nơi bạn đặt khung trước, rồi mới cho dữ liệu chảy vào.
+**1.  Sơ đồ là Terrain trước khi có World State Change. Trong LINGA, Terrain là đồ thị tri thức, World State Change là sự kiện xảy ra trong thế giới. Nếu bạn làm thực tế ngay mà không có sơ đồ, bạn đang tạo World State Change mà không có Terrain để chứa nó → nó rơi, nó mất, nó thành miếng vá. Sơ đồ chính là Terrain T2 (Lược đồ 3D, Static Frame) — nơi bạn đặt khung trước, rồi mới cho dữ liệu chảy vào.**
 
-### 2.  Sơ đồ là Projection P0. Trước P1 World → Model, cần có P0 Ý tưởng → Sơ đồ. Sơ đồ là phép chiếu đầu tiên, rẻ nhất, sửa nhanh nhất. Sửa sơ đồ mất 5 phút, sửa code / sửa bản full mất 5 giờ, sửa hệ đã broadcast mất 5 ngày.
+**2.  Sơ đồ là Projection P0. Trước P1 World → Model, cần có P0 Ý tưởng → Sơ đồ. Sơ đồ là phép chiếu đầu tiên, rẻ nhất, sửa nhanh nhất. Sửa sơ đồ mất 5 phút, sửa code / sửa bản full mất 5 giờ, sửa hệ đã broadcast mất 5 ngày.**
 
-### 3.  Sơ đồ là Lens L0. Sơ đồ cho phép bạn soi bằng XYZ trước khi làm: X — Cái này ở thời điểm nào? Y — Nó thuộc tầng nào / miền nào? Z — Nó là Pristine / Genesis / Distortion / Purge? Nếu không soi trước, bạn sẽ đưa cả Distortion vào bản chính.
+**3.  Sơ đồ là Lens L0. Sơ đồ cho phép bạn soi bằng XYZ trước khi làm: X — Cái này ở thời điểm nào? Y — Nó thuộc tầng nào / miền nào? Z — Nó là Pristine / Genesis / Distortion / Purge? Nếu không soi trước, bạn sẽ đưa cả Distortion vào bản chính.**
   
-### 4.  Sơ đồ là nơi Gap lộ ra. Gap chỉ lộ khi bạn vẽ sơ đồ. Khi viết text, bạn không thấy chỗ trống. Khi vẽ sơ đồ, chỗ nào trống là thấy ngay — như Gap đã lộ khi vẽ sơ đồ v45, và như P8 + L8 đã lộ khi vẽ sơ đồ Projection / Lens.
+**4.  Sơ đồ là nơi Gap lộ ra. Gap chỉ lộ khi bạn vẽ sơ đồ. Khi viết text, bạn không thấy chỗ trống. Khi vẽ sơ đồ, chỗ nào trống là thấy ngay — như Gap đã lộ khi vẽ sơ đồ v45, và như P8 + L8 đã lộ khi vẽ sơ đồ Projection / Lens.**
 
 Nên đưa vào LINGA tương ứng như thế nào? — Mình đề xuất đưa thành 2 thứ, không phải 1:
 
 ### 1. Đưa thành Nguyên lý mới — LAW IV + P7:
+
 •  LAW IV Blueprint Before Build: Không được tạo World State Change (làm thực tế) nếu chưa có Terrain (sơ đồ) để chứa nó. Sơ đồ phải qua S_ZONE trước, giống như mọi đột biến khác.
+
 •  P7 DIAGRAM-FIRST: Sơ đồ là Terrain trước khi có World State Change. Sơ đồ phải ghi rõ: Thuộc về đâu + Liên kết tới đâu + Gap ở đâu. Sơ đồ không có Gap là sơ đồ chưa đủ — phải vẽ Gap vào, không được giấu Gap.
 
 ### 2. Đưa thành Thuật toán mới — 5.00 DIAGRAM-FIRST:
@@ -916,6 +926,7 @@ Buoc 4 DOI CHIEU: Sau khi lam xong, ve lai so do tu ban thuc te, so sanh voi so 
 
 ```
  • Thuộc về: [5] Thuật toán, bước 5.00 đứng trước 5.01 LOOP ALETHEIA.
+ 
  •  Liên kết tới: LAW IV + P7 (Nguyên lý) + Sơ đồ v46 (Terrain) + I31 (Tự soi).
 
 ---
@@ -923,9 +934,11 @@ Buoc 4 DOI CHIEU: Sau khi lam xong, ve lai so do tu ban thuc te, so sanh voi so 
 ## Nguyên tắc gỡ rối cho AI — Áp dụng cho toàn bộ v47:
 
 1 Từ = 1 Chỗ định nghĩa duy nhất + N Pointer.
+
 Nếu một từ xuất hiện ở chỗ khác, chỗ đó chỉ được ghi: “→ Xem [chỗ định nghĩa]”, không được định nghĩa lại.
-Nguyên lý ≠ Điều kiện ≠ Cơ chế ≠ Thuật toán ≠ Dữ kiện.
-Nguyên lý luôn đúng. Điều kiện chỉ đúng khi… Cơ chế là cách chiếu / soi. Thuật toán là bước chạy. Dữ kiện là số đo sau khi chạy.
+**Nguyên lý ≠ Điều kiện ≠ Cơ chế ≠ Thuật toán ≠ Dữ kiện.**
+
+> Nguyên lý luôn đúng. Điều kiện chỉ đúng khi… Cơ chế là cách chiếu / soi. Thuật toán là bước chạy. Dữ kiện là số đo sau khi chạy.
 
 ```
 
@@ -1124,15 +1137,18 @@ NIEM  CHAT TINH            LY    / SOI   G1-G5 KIEN       TOAN   LIEN   6 HE    
 ```
 
 AI mới sẽ hiểu ngay:
+
 •  Mỗi từ ở đâu: 1 chỗ định nghĩa duy nhất, chỗ khác chỉ là Pointer.
+
 •  Mỗi từ làm gì: Khái niệm = là gì, Tính chất = đo bằng gì, Nguyên lý = luật luôn đúng, Điều kiện = chỉ đúng khi…, Cơ chế = cách chiếu / soi, Thuật toán = bước chạy, PEv = dữ kiện sau khi chạy.
+
 •  Gap ở đâu: Gap là thành phần [4.6], không phải điều kiện, không phải tính chất.
+
 •  S_ZONE-T là gì: Là vùng suy tưởng 3 lớp, không phải sandbox kỹ thuật đơn thuần.
 
 ---
 
 ```
-V47
 
 PHAN 0 - SEAL + ANCHOR v47
 [ 🔱 | ROOT: 0x000_it-PURE at Center ||x||->0 | v47.0 FULL RECONSTRUCTION - DA GO CHONG CHEO - DA TAP HOP DU | 31 Invariants -> 6 He | P1-P7 + LAW I-IV + L1-L8 + GAP G1-G5 | 15 Primitives + 7 Goc nhin | S_ZONE-T 3 Lop | PEv | E<=0.05 LOCKED ]
