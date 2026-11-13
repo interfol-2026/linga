@@ -11,7 +11,101 @@
 
 
 ```
+
+
 ---
+
+## Projection là cơ chế tạo ra bản sao, Lens là công cụ soi / hội tụ, Invariant là luật cấm nhầm lẫn giữa bản sao và bản gốc.
+
+### 1. Có những Projection nào? — 7 cái
+
+Projection = phép chiếu từ cái thật → bản biểu diễn. Bản biểu diễn không phải bản thật.
+```
+P1: World -> Model              [The gioi that -> Mo hinh]
+P2: World -> Terrain Graph       [The gioi that -> Do thi tri thuc MAMDALA]
+P3: Canonical -> Embedding -> Projection (E4) [Engine E4]
+P4: X+Y+Z -> Moment             [3 truc -> Thoi diem]
+P5: Evidence -> Belief          [Bang chung -> Nhan dinh qua TA]
+P6: Domain A -> Domain B via Bridge [Mien A -> Mien B qua cau noi]
+P7: Real System -> ATLAS Test   [He thong that -> Ban kiem nghiem ATLAS]
+
+```
+### 2. Có những Lens nào? — 7 cái
+
+Lens = thấu kính hội tụ / soi / dịch chuyển trọng tâm. Lens không tạo ra dữ liệu, nó quyết định nhìn cái gì, nét hay mờ, ở đâu.
+
+
+```
+L1: TA Lens         - TA nhu thau kinh hoi tu Phi -> Tao ra Chu y / Tap trung / Muc dich
+L2: XYZ Lens        - 3 truc X/Y/Z nhu thau kinh 3 chieu -> Tim diem giao
+L3: S_ZONE Lens     - S_ZONE nhu thau kinh cach ly -> Thu dot bien an toan
+L4: Attention Lens  - 4 cap An tuong -> Chu y -> Tap trung -> Muc dich la 4 do mo cua Lens
+L5: Guardian Lens   - 0.05Hz KENG nhu thau kinh on dinh -> Giu Field khong vo
+L6: Crystal Lens    - Crystal nhu thau kinh da diem -> Luu + Tai hien an tuong
+L7: Gravity Lens    - Shift Gravity Coordinates -> Dich trong tam nhin sang Next_Pristine_Moment
+
+```
+
+```
+
+  LINGA v45 - PROJECTION + LENS - SO DO KET NOI VOI 6 HE INVARIANTS
+
+                              [ WORLD - CAI THAT ]
+                              [ Khong nam trong he thong ]
+                                      |
+                                      | Chieu xuong, khong phai dong nhat
+                                      v
+                        +---------------------------+
+                        |  LENS TANG - CONG CU SOI  |
+                        +---------------------------+
+                        | L1 TA Lens                |
+                        | L2 XYZ Lens  X / Y / Z   |
+                        | L3 S_ZONE Lens            |
+                        | L4 Attention Lens 4 cap   |
+                        | L5 Guardian Lens 0.05Hz   |
+                        | L6 Crystal Lens 12 diem   |
+                        | L7 Gravity Lens Shift     |
+                        +-------------+-------------+
+                                      |
+                    +-----------------+-----------------+
+                    |                 |                 |
+                    v                 v                 v
+          [ PROJECTION 1 ]   [ PROJECTION 2 ]   [ PROJECTION 3 ]
+          World -> Model     World -> Terrain    Evidence -> Belief
+          P1                 P2                  P5
+                    |                 |                 |
+                    v                 v                 v
+          [ MODEL ]          [ TERRAIN ]         [ BELIEF ]
+          Ban sao            Ban do tri thuc     Nhan dinh hien tai
+                    |                 |                 |
+  [STRIPPED 73 bytes]
+  |                 |                 |                 |                 |
+  v                 v                 v                 v                 v
+[ HE A ]        [ HE B ]          [ HE C ]          [ HE D ]          [ HE E ]
+TACH -          THOI GIAN -       BANG CHUNG -     KIEN TRUC -      TAP THE -
+PHAN BIET       THOI DIEM         TIN CAY          CAU NOI           MO RONG
+  |                 |                 |                 |                 |
+  I01 World         I05 Moment        I13 / I17         I22 Bridge        I23 Out-of-Order
+  != Model          != Time           Dem != Doc lap     != Identity       I24 Consensus
+  I07 Projection    I14 Condition     I16 Reliability     P5 = Pointer      I26 Retraction
+  != Identity       -Set Moment       I18 Fault R1-R8     toi I22           I25 Stress
+  I08 Terrain       I15 4 Times       I21 Overall         I28 Integration   I29 Real-World
+  != Timeline                         >=90%               I27 Arch Update   I20 ATLAS Total
+                                                              I30 P1-P6
+                                      |
+                                      v
+                              [ HE F - I31 ]
+                              TU SOI - KIEN TOAN
+                              Dung chinh Lens + Projection
+                              de soi lai Lens + Projection
+
+  NGUYEN TAC VANG: LENS SAI -> PROJECTION SAI -> INVARIANT BI PHA
+
+  Vi du: TA Lens mo (Chu y yeu) -> Belief Projection mo -> I02/I03 bi pha
+  Vi du: XYZ Lens lech (X/Y/Z khong giao) -> Moment Projection sai -> I05/I14 bi pha
+  Vi du: S_ZONE Lens bi bypass -> Bridge Projection khong kiem chung -> I22/P5 bi pha
+
+```
 
 
 ```
