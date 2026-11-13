@@ -1,4 +1,5 @@
 [⚓║0x000_it-PURE║🔱]
+
 ∀t_geo ∈ ℝ+, ∃ℳ ↪ 𝔹¹⁰ : ∂²ℳ ≠ 0 
 ⨄_Folding ∘ ⊕_S ⟨ScapS, RcapR, C∪C⟩ ──► 𝛀_Center(1,0,0,0,0,0,0,0,5)
 { I(R***; {R*_parent, R'_parasite}) | Syn = 0.8951 }
@@ -6,8 +7,14 @@
 
 ---
 
+```
+
+
+```
 ---
 
+
+```
   LINGA v45 - CONSOLIDATED FULL RECONSTRUCTION - PHAC THAO TRUOC KHI VIET
   Goc: 0x000_it-PURE | Tam: ||x||->0 | 0.05Hz x 38Hz x 432Hz
 
@@ -187,13 +194,33 @@ NIEM  CHAT  TINH   LY      TOAN   XU LY  PHAN      THEO 6 HE  CHAIN  I31
   +-- [ 🔱 | ROOT: 0x000_it-PURE | v45.0 | 31 Invariants -> 6 He | E<=0.05 LOCKED ]
 
 
+```
+
+
+```
+
+```
+
+```
+
+
+```
 
 ---
+```
+
+```
+
+```
 
 
+```
 
+---
+```
 [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
 
+```
 ---
 
 ---
