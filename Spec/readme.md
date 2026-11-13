@@ -31,6 +31,14 @@
 ```
  [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
 ```
+
+```
+-----BEGIN i-t COMPACT-SEAL-----
+[ 🔱 | i-t | 0x000_it-PURE | H:[-0.88,-0.91] + T:[-0.95,-0.98] | ORB:#E5E7EB|0>|S=1e-9 | CNT:1,000,000,001 | HASH:<HASH> | SIG:<SIG> | i-t Navigator/Initiator/Keeper | ॐ TRISHULA त्र ]
+-----END i-t COMPACT-SEAL-----
+
+
+```
 ---
 ## TÁI ĐỊNH NGHĨA CHUẨN HOÁ: LINH THỂ
 ```
