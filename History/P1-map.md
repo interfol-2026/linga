@@ -45,7 +45,7 @@ L6: Crystal Lens    - Crystal nhu thau kinh da diem -> Luu + Tai hien an tuong
 L7: Gravity Lens    - Shift Gravity Coordinates -> Dich trong tam nhin sang Next_Pristine_Moment
 
 ```
-
+ ### sơ đồ Projection + Lens + Invariants 
 ```
 
   LINGA v45 - PROJECTION + LENS - SO DO KET NOI VOI 6 HE INVARIANTS
@@ -104,6 +104,249 @@ PHAN BIET       THOI DIEM         TIN CAY          CAU NOI           MO RONG
   Vi du: TA Lens mo (Chu y yeu) -> Belief Projection mo -> I02/I03 bi pha
   Vi du: XYZ Lens lech (X/Y/Z khong giao) -> Moment Projection sai -> I05/I14 bi pha
   Vi du: S_ZONE Lens bi bypass -> Bridge Projection khong kiem chung -> I22/P5 bi pha
+
+```
+### 4. Bảng kết nối chi tiết — Projection nào → Lens nào → Invariant nào
+
+```
+Projection | Lens dung de chieu | Invariant giu | Neu nham lan thi sao?
+[STRIPPED 75 bytes] World -> Model | L1 TA Lens | I01 World != Model | Tuong Model = World
+                  | L2 XYZ Lens  | I07 Projection != Identity | -> Distortion
+P2 World -> Terrain | L1 TA Lens | I08 Terrain != Timeline | Tuong Terrain = Timeline
+                    | L6 Crystal Lens | I07 Projection != Identity | -> Mat lich su
+P3 Canonical -> E4 | L2 XYZ Lens | I07 Projection != Identity | Tuong Embedding = Ban chat
+  Projection E4   | L5 Guardian Lens | P4 Projection/Identity | -> Dong nhat phep chieu
+P4 X+Y+Z -> Moment | L2 XYZ Lens | I05 Moment != Time | Tuong Moment = Thoi gian
+                   | L7 Gravity Lens | I14 Condition-Set | -> Mat diem giao
+                   |                 | I15 4 Times |
+P5 Evidence -> Belief | L1 TA Lens | I02 Obs != Evid | Tuong Suy luan = Bang chung
+                     | L4 Attention Lens | I03 Evid != Infer | -> Belief sai
+                     |                 | I04 Infer != Action |
+P6 Domain A -> B | L2 XYZ Lens | I22 Bridge != Identity | Tuong Bridge = Dong nhat
+  via Bridge     | L3 S_ZONE Lens | P5 = Pointer toi I22 | -> Mat ranh gioi mien
+                 |                 | I28 Integration |
+P7 Real -> ATLAS | L3 S_ZONE Lens | I21 Overall >=90% | Tuong Mo phong = Thuc te
+                 | L2 XYZ Lens  | I29 Real-World | -> Mat canh bao E06-12
+                 |                 | I20 ATLAS Total |
+```
+### so đồ thiếu — Trước khi viết full v45
+```
+
+  LINGA v45 - MAP THIEU / NHAM / SOT - TRUOC KHI VIET FULL
+
+                          [ LINGA v45 - DA CO ]
+                                    |
+        +-------------------------+-------------------------+
+        |                         |                         |
+   [DA CO - GIU]            [THIEU - BO SUNG]          [NHAM - SUA]
+        |                         |                         |
+  1 Cong thuc              T1 15 Primitives          N1 MAMDALA (chot)
+  3 Quy luat               T2 7 Lenses (seal)        N3 3 vs 5 trang thai
+  1 Vong lap               T3 4 Times                N5 P5 = Pointer I22
+  6 Tang / 4 Cap           T4 Condition-Set          N6 I13 = Sub-rule I17
+  Decay Detector           T5 WORLD 6 Layers         N9 2 loai nen 128:1 vs 12.4:1
+  5 Dieu tu van            T6 R1-R8 chi tiet        N10 I23 doi ten
+  S_ZONE + XYZ             T7 Collective v2.0
+  P1-P6 + LAW I-III        T8 ATLAS E1-E10
+  31 -> 6 He               T9 Gene + Retrospective
+  P1-P7 + L1-L7            T10 Lens L8 Time Lens
+                           T11 Projection P8 Self-Projection
+                           T12 Metric cho Lens
+                           T13 Failure Mode Table
+                                    |
+                                    v
+                          [ BO SOT - LAY LAI TU HINH ]
+                                    |
+                          S1 Ghi chu goc duoi 4 hinh cu
+                          S2 Bang cot phai
+                          S3 Vi du X CLOSED->OPEN
+                          S4 4 truong hop bien the 06-E.11.6
+                          S5 Rui ro E06-12
+                          S6 6 linh vuc E06-13
+                          S7 Kich ban S1-S4 E06-13
+                          S8 Mo hinh DOMAIN OBJECT/LINK/GRAPH
+                          S9 2 Flow khac nhau (11.7 vs 12)
+                                    |
+                                    v
+                    [ v45 FULL - SAU KHI BO SUNG ]
+                    Khong them Invariant moi (van 31)
+                    Chi them: P8 + L8 + Primitives + 7 Lenses
+                    + Failure Mode + Metric cho Lens
+                    + Lay lai S1-S9 tu hinh goc
+```
+> **cái nào thuộc về cái nào, và liên kết với cái nào**
+### Sơ đồ 1 — Thuộc về cái gì? (Belongs-To)
+```
+
+  LINGA v45 - THUOC VE CAI GI? - PHAN LOAI DUT KHOAT, KHONG DE LAN
+
+                          [ LINGA v45 ]
+                                |
+      [STRIPPED 70 bytes]
+      |                         |                         |                |
+ [1] KHAI NIEM            [2] TINH CHAT            [3] DAC TINH      [4] NGUYEN LY
+ Concept - La gi?        Property - Do duoc     Characteristic -    Principle - Luat cam
+                          bang so                Hanh vi            nham
+      |                         |                         |                |
+      +-- TA                     +-- 432Hz / 38Hz /       +-- Tu tai to hop  +-- LAW I-II-III
+      +-- it / Phi               |   0.05Hz                +-- Gap dong      +-- P1-P6
+      +-- Crystal                +-- Integrity 99.999%     +-- Tinh truoc -   +-- DUNG + SOI
+      +-- MAGIC-0                +-- Recall 99.6%          |   Dong sau      +-- 7 GOC NHIN
+      +-- S_ZONE (khan niem)     +-- Compression 128:1     +-- Khong xoa     |   (Seal 7 Lenses)
+      +-- Terrain                +-- Uptime 99.95%         |   lich su       |   -> DOI TEN thanh
+      +-- Moment / Time          +-- 99.32% / 68ms         +-- Vong xoay     |   7 Viewpoints V1-V7
+      +-- Domain Object          +-- 50 Agent / 5000 req/s +-- Chiu loi      |   de khong lan voi
+      +-- LINK / Bridge          +-- Tre <200ms            +-- Mo rong       |   Lens operator L1-L8
+      +-- Evidence / Belief      +-- ...                   |   khong suy giam |
+      +-- 15 PRIMITIVES ---------|> THUOC VE [1] KHAI NIEM - La vien gach goc, khong phai thuat toan
+      |                         |   15 cai nho nhat, khong tach duoc nua
+      |                         |   Vi du: TA, it, Moment, Link, Evidence, ...
+      |                         |   (Se liet ke du 15 cai o ban full)
+      |                         |
+      |                         |
+ [4.5] PROJECTION + LENS - TANG TRUNG GIAN - Co che chieu / soi
+      |
+      +-- PROJECTION P1-P8 ------|> THUOC VE [4.5a] - Phep chieu, khong phai ban chat
+      |   P1 World -> Model
+      |   P2 World -> Terrain
+      |   P3 Canonical -> E4 Projection
+      |   P4 X+Y+Z -> Moment
+      |   P5 Evidence -> Belief
+      |   P6 Domain A -> B via Bridge
+      |   P7 Real -> ATLAS Test
+      |   P8 Self-Projection: LINGA -> LINGA (MOI)
+      |       -> Thuoc ve Projection, vi no cung la phep chieu
+      |       -> Khac P1-P7: Dau vao = Chinh he thong, khong phai World
+      |
+      +-- LENS L1-L8 ------------|> THUOC VE [4.5b] - Cong cu soi, khong phai du lieu
+          L1 TA Lens
+          L2 XYZ Lens
+          L3 S_ZONE Lens
+          L4 Attention Lens (4 cap)
+          L5 Guardian Lens 0.05Hz
+          L6 Crystal Lens 12 diem
+          L7 Gravity Lens Shift
+          L8 Time Lens (MOI) -> Thuoc ve Lens, vi no soi rieng thoi gian
+              -> De tach Moment vs Time, khong de lan
+
+ [5] THUAT TOAN - Algorithm - Buoc chay cu the
+      |
+      +-- 5.1 LOOP ALETHEIA
+      +-- 5.2 DECAY DETECTOR
+      +-- 5.3 LINKAGE
+      +-- 5.4 FORGETTING
+      +-- 5.5 CONSOLIDATION
+      +-- 5.6 CONFLICT
+      +-- 5.7 ABSTRACTION
+      +-- 5.8 RETRACTION
+      +-- 5.9 CONSENSUS
+      +-- 5.10 SELF-REVIEW
+      +-- FAILURE MODE TABLE (MOI) -> THUOC VE [5] - Bang chan doan loi
+          -> Khong phai Nguyen ly, khong phai Invariant
+          -> La bang tra cuu khi thuat toan chay sai
+
+ [6] THANH PHAN LIEN KET - Linked - Chi goi ten
+      |
+      +-- LINGA ENGINE v4.0 (E1-E5)
+      +-- 5 ENGINES
+      +-- MAMDALA-TERRAIN
+      +-- DOMAIN LAYER D1-D3
+      +-- DATA INFRA
+      +-- ATLAS CHAIN 06-E.11 -> E06-13
+      +-- S1-S9 (TU HINH GOC) -> THUOC VE [6] - Du lieu nguon, khong phai dinh nghia moi
+          S1 Ghi chu goc duoi 4 hinh cu -> Thuoc ve ATLAS Chain, muc Ghi chu
+          S2 Bang cot phai 4 hinh cu -> Thuoc ve ATLAS Chain, muc Bang
+          S3 Vi du X CLOSED->OPEN -> Thuoc ve 06-E.11.7, muc Vi du
+          S4 4 truong hop bien the -> Thuoc ve 06-E.11.6, muc Bien the
+          S5 Rui ro E06-12 -> Thuoc ve E06-12, muc Rui ro
+          S6 6 linh vuc E06-13 -> Thuoc ve E06-13, muc Linh vuc
+          S7 Kich ban S1-S4 E06-13 -> Thuoc ve E06-13, muc Kich ban
+          S8 Mo hinh DOMAIN OBJECT/LINK/GRAPH -> Thuoc ve 06-E.11.7, muc Mo hinh
+          S9 2 Flow khac nhau -> Thuoc ve 06-E.11.7 + E06-12, muc Flow
+
+ [7] INVARIANTS - 6 HE - Luat kiem chung cuoi
+      |
+      +-- HE A: TACH - PHAN BIET (11)
+      +-- HE B: THOI GIAN - THOI DIEM (3)
+      +-- HE C: BANG CHUNG - TIN CAY (5)
+      +-- HE D: KIEN TRUC - CAU NOI (4)
+      +-- HE E: TAP THE - MO RONG - THUC TE (7)
+      +-- HE F: TU SOI (1) - I31
+
+ [8] SEAL - Bao ho, khong dung de suy luan
+      +-- TRISHULA + 0x000_it-PURE
+```
+### Sơ đồ 2 — Liên kết với cái gì? (Links-To)
+```
+
+  LINGA v45 - LIEN KET VOI CAI GI? - MOI MUI TEN LA 1 LIEN KET CO KIEM SOAT
+
+
+[15 PRIMITIVES] --la vien gach cua--> [1 KHAI NIEM] --duoc do bang--> [2 TINH CHAT]
+      |                                                              |
+      +-- Vi du: TA, it, Moment, Link, Evidence ----------------------+
+      +-- Khong lien ket truc tiep voi Thuật toán, phai qua Khai niem
+
+[7 Viewpoints V1-V7] --la goc nhin cua--> [4 NGUYEN LY]
+      |   V1-V7 la 7 cach nhin cung 1 su viec, khong phai 7 thau kinh
+      +-- Khong lien ket voi L1-L8 operator. Neu lan 2 loai Lens nay -> sai
+      +-- Lien ket toi: P1-P6 + LAW I-III (cung tang Nguyen ly)
+
+[P1-P8 Projection] --duoc soi boi--> [L1-L8 Lens] --duoc giu boi--> [7 INVARIANTS 6 He]
+      |
+      P1 World->Model      -- L1 TA + L2 XYZ --> HE A: I01 + I07
+      P2 World->Terrain    -- L1 TA + L6 Crystal --> HE A: I08 + I07
+      P3 Canonical->E4    -- L2 XYZ + L5 Guardian --> HE A: I07 + HE D: P4
+      P4 X+Y+Z->Moment    -- L2 XYZ + L8 Time + L7 Gravity --> HE B: I05 + I14 + I15
+      P5 Evidence->Belief -- L1 TA + L4 Attention --> HE A: I02 + I03 + I04 + HE C: I17
+      P6 Domain A->B      -- L2 XYZ + L3 S_ZONE --> HE D: I22 + P5 + I28
+      P7 Real->ATLAS      -- L3 S_ZONE + L2 XYZ --> HE C: I21 + HE E: I20 + I29
+      P8 Self->Self       -- L3 S_ZONE + L2 XYZ + L8 Time --> HE F: I31
+             |                    |                              |
+             +-- P8 la Projection duy nhat co dau vao = chinh he
+             +-- L8 la Lens duy nhat chi soi thoi gian, khong soi khong gian / phan loai
+             +-- Neu L8 mo -> P4 sai -> I05 bi pha (Moment = Time)
+             +-- Neu L3 bi bypass -> P6/P7 sai -> I22 / I29 bi pha
+
+[L1-L8 Lens] --quyet dinh do net cua--> [P1-P8] --quyet dinh dung/sai cua--> [Invariant]
+      |
+      L1 TA Lens -------> P1, P2, P5
+      L2 XYZ Lens -----> P1, P3, P4, P6, P7, P8 (Lens dung nhieu nhat)
+      L3 S_ZONE Lens --> P6, P7, P8 (Lens bao ve, khong cho bypass)
+      L4 Attention ----> P5 (Lens dieu chinh do mo cua Belief)
+      L5 Guardian -----> P3 (Lens on dinh)
+      L6 Crystal ------> P2 (Lens luu / tai hien)
+      L7 Gravity ------> P4 (Lens dich trong tam)
+      L8 Time ---------> P4, P8 (Lens tach thoi gian)
+
+[FAILURE MODE TABLE] --chan doan--> [Lens + Projection + Invariant]
+      |
+      Vi du 1: L1 mo (Chu y yeu) -> P5 mo -> I02/I03 bi pha -> Sua: Tang Attention, qua S_ZONE
+      Vi du 2: L2 lech (XYZ khong giao) -> P4 sai -> I05/I14 bi pha -> Sua: Can lai XYZ, tim lai diem giao
+      Vi du 3: L3 bypass -> P6/P7 khong kiem chung -> I22/I29 bi pha -> Sua: Buoc quay lai S_ZONE
+      Vi du 4: L8 mo (Khong tach Time) -> P4 = Time -> I05 bi pha -> Sua: Bat L8, tach X ra khoi Moment
+      Vi du 5: P8 khong co L8 -> Tu soi nham thoi gian -> I31 bi pha -> Sua: P8 bat buoc kem L8
+
+[S1-S9] --la du lieu nguon cua--> [ATLAS CHAIN] --duoc kiem chung boi--> [HE E + HE C]
+      |
+      S1, S2 -> ATLAS Chain chung (Ghi chu + Bang cot phai)
+      S3, S8, S9 -> 06-E.11.7 Arch Update
+      S4 -> 06-E.11.6 Retraction
+      S5 -> E06-12 Integration
+      S6, S7 -> E06-13 Real-World
+      +-- S1-S9 khong tao ra Invariant moi, chi bo sung bang chung cho Invariant cu
+
+[31 Invariants -> 6 He] --duoc thuc thi boi--> [P1-P8 + L1-L8] --duoc chay boi--> [5.1-5.10 Thuat toan]
+      |
+      HE A (Tach) <--> P1, P2, P3, P5 <--> Thuat toan 5.3 LINKAGE + 5.6 CONFLICT
+      HE B (Thoi gian) <--> P4 <--> Thuat toan 5.2 DECAY + L8 Time Lens
+      HE C (Bang chung) <--> P5, P7 <--> Thuat toan 5.4 FORGETTING + 5.5 CONSOLIDATION
+      HE D (Kien truc) <--> P6, P3 <--> Thuat toan 5.7 ABSTRACTION + 5.3 LINKAGE
+      HE E (Tap the) <--> P6, P7, P8 <--> Thuat toan 5.8 RETRACTION + 5.9 CONSENSUS
+      HE F (Tu soi) <--> P8 <--> Thuat toan 5.10 SELF-REVIEW
+```
+
+```
 
 ```
 
