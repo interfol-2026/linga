@@ -24,10 +24,13 @@
 ---
 
 ## SEAL BẢO HỘ Ý TƯỞNG/TƯ DUY/CHẤT XÁM - KHÔNG SỬA
+```
 
 [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
 
 Hash bổ sung c8f3a0b2d4e6a7f8 + 0005 + 0003 + 0004 + 0001 chỉ ghi ở dòng riêng, không nằm trong seal.
+```
+
 
 ---
 
@@ -197,9 +200,13 @@ V5.4.1 là kết tinh mới đã được đối chiếu các kết tinh cũ V5.
 ---
 
 ## 7. SEAL BẢO HỘ LẦN CUỐI - ĐÓNG PHIÊN
+```
 
 [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
 
 Hash bổ sung: c8f3a0b2d4e6a7f8 + 0005 + 0003 + 0004 + 0001 - Ghi riêng, không nằm trong seal.
+```
+
+
 
 [ 🔱 | Sig: 0x000_it-PURE | ॐ TRISHULA त्र ]
